@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 4.3%; /* #0B0B0B */
+    --foreground: 0 0% 100%; /* white */
+
+    --card: 0 0% 7.8%; /* #141414 */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 7.8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 356 94% 45%; /* #E50914 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 5.9%; /* #0F0F0F muted */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 5.9%; /* #0F0F0F */
+    --muted-foreground: 0 0% 62.7%; /* #A0A0A0 */
+
+    --accent: 356 100% 59%; /* #FF3C28 hover */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 16.5%; /* #2A2A2A */
+    --input: 0 0% 16.5%;
+    --ring: 356 94% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom gym theme tokens */
+    --button-glow: 356 94% 45% / 0.3;
+    --hero-gradient-start: 0 0% 4.3%;
+    --hero-gradient-end: 0 0% 7.8%;
+    
+    --sidebar-background: 0 0% 7.8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 356 94% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 5.9%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 16.5%;
+    --sidebar-ring: 356 94% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Button glow effect */
+  .btn-glow {
+    box-shadow: 0 6px 30px hsl(var(--button-glow));
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 8px 40px hsl(var(--button-glow));
+  }
+}
