@@ -106,8 +106,8 @@ const Header = () => {
 
         {/* Mobile Menu with proper padding and alignment */}
         {isMobileMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-border bg-card/95 backdrop-blur-md animate-fade-in">
-            <div className="flex flex-col gap-2">
+          <nav className="lg:hidden py-4 mx-2 mb-2 rounded-2xl border border-border bg-card/95 backdrop-blur-md animate-fade-in shadow-lg overflow-hidden">
+            <div className="flex flex-col gap-2 px-2">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
