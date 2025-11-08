@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import ProgramGoals from "@/components/ProgramGoals";
 import Benefits from "@/components/Benefits";
 import Coach from "@/components/Coach";
+import LearningFromTheBest from "@/components/LearningFromTheBest";
 import Timeline from "@/components/Timeline";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
@@ -19,6 +20,7 @@ const Index = () => {
         <ProgramGoals />
         <Benefits />
         <Coach />
+        <LearningFromTheBest />
         <Timeline />
         <Testimonials />
         <Pricing />

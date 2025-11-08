@@ -31,7 +31,7 @@ const Hero = () => {
             Stronger. Healthier.{" "}
             <span className="text-primary">Fitter.</span> From Home.
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-light">
             Simple home workouts. Clear guidance. Visible results in 12 weeks.
           </p>
@@ -57,13 +57,9 @@ const Hero = () => {
           </p>
 
           {/* Trust Badges */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-xs text-muted-foreground uppercase tracking-wider">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-xs text-muted-foreground uppercase tracking-wider">
             <span className="opacity-60">As Trained By:</span>
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-              <span className="font-semibold">Gold's Gym Fitness Institute</span>
-              <span className="hidden sm:inline">•</span>
-              <span className="font-semibold">Shivoham</span>
-            </div>
+            <span className="font-semibold">Gold's Gym Fitness Institute</span>
           </div>
         </div>
       </div>

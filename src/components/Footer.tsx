@@ -3,7 +3,6 @@ import logo from "../assets/logo.png";
 import redlogo from "../assets/redlogo.png";
 
 const Footer = () => {
-  // Smooth scroll to top
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -42,7 +41,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-left">
           {/* For Members */}
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-white tracking-wide">
+            <h3 className="text-xl font-normal mb-3 text-white tracking-normal">
               For Members
             </h3>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -56,7 +55,7 @@ const Footer = () => {
 
           {/* Programs */}
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-white tracking-wide">
+            <h3 className="text-xl font-normal mb-3 text-white tracking-normal">
               Programs
             </h3>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -70,7 +69,7 @@ const Footer = () => {
 
           {/* Explore */}
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-white tracking-wide">
+            <h3 className="text-xl font-normal mb-3 text-white tracking-normal">
               Explore
             </h3>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -84,7 +83,7 @@ const Footer = () => {
 
           {/* Connect With Us */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white tracking-wide">
+            <h3 className="text-xl font-normal mb-4 text-white tracking-normal">
               Connect With Us
             </h3>
             <div className="flex justify-start space-x-4 mb-4">

@@ -13,7 +13,7 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section id="benefits" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">

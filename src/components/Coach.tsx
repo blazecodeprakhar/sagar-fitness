@@ -16,12 +16,15 @@ const Coach = () => {
   return (
     <section id="coach" className="py-20 bg-background">
       <div className="container mx-auto px-4">
+        {/* ===== Title with Red Gradient Line ===== */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-6xl font-heading mb-4">
+          <h2 className="text-4xl md:text-6xl font-heading mb-5 uppercase tracking-wide">
             Meet Your Coach
           </h2>
+          <div className="w-64 md:w-80 h-[3px] bg-gradient-to-r from-transparent via-[#e50914] to-transparent mx-auto rounded-full"></div>
         </div>
 
+        {/* ===== Main Layout ===== */}
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Coach Photo */}
           <div className="animate-fade-in">

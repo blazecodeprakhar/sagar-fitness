@@ -51,7 +51,7 @@ const FAQs = () => {
                 className="bg-card border border-border rounded-lg px-6 animate-slide-up"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary hover:no-underline">
+                <AccordionTrigger className="text-left text-lg font-medium text-white hover:text-primary hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
