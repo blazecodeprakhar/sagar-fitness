@@ -3,11 +3,11 @@ import { Check } from "lucide-react";
 const Benefits = () => {
   const benefits = [
     "Personalised 3 month plan",
-    "5 live online sessions every week",
+    "Weekly once fitness-related discussion",
     "Home friendly workouts",
     "Real time form correction",
     "Weekly progress tracking",
-    "Simple food guidance",
+    "Diet line guidance",
     "Beginner friendly and injury safe",
     "Direct WhatsApp support",
   ];

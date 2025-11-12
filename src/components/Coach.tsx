@@ -1,15 +1,14 @@
-import { Award } from "lucide-react";
+import { Award } from "lucide-react"; 
 import coachImage from "@/assets/coach-photo.jpg";
 
 const Coach = () => {
   const credentials = [
-    "Trained and Certified under Celebrity Coach Shivoham",
+    "Train The Trainer certification under Celebrity Coach Shivoham",
+    "UFTLB certification under Celebrity Coach Shivoham",
     "Certified Fitness Trainer, Gold's Gym Fitness Institute",
-    "Advanced Energy Healing Practitioner under Vrinda Bhutt",
-    "Train The Trainer certification under Shivoham",
-    "UFTLB certification under Shivoham",
+    "Advanced Energy Healing Practitioner under Celebrity Coach Vrinda Bhutt",
     "Certified Sword and Lathi Kathi Trainer, Shivaji Raje Mardani Akhada Pune",
-    "Attended Calisthenics training under Deepak Mali",
+    "Attended Calisthenics training under Celebrity Coach Deepak Mali",
     "Certified Actor, Ramanaidu Film School Hyderabad",
   ];
 
@@ -61,12 +60,12 @@ const Coach = () => {
             <div className="mt-8 flex items-center gap-4">
               <span className="text-sm text-muted-foreground uppercase tracking-wide">Follow:</span>
               <a
-                href="https://www.instagram.com/thesagargatlewar"
+                href="https://www.instagram.com/sagarfitness__"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-accent transition-colors font-medium"
               >
-                @thesagargatlewar
+                @sagarfitness__
               </a>
             </div>
           </div>

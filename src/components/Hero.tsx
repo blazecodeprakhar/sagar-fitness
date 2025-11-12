@@ -29,15 +29,11 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading mb-6 leading-tight">
             Stronger. Healthier.{" "}
-            <span className="text-primary">Fitter.</span> From Home.
+            <span className="text-primary">Fitter.</span> ANYTIME. ANYWHERE.
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-light">
             Simple home workouts. Clear guidance. Visible results in 12 weeks.
-          </p>
-
-          <p className="text-sm md:text-base text-muted-foreground/80 mb-8 italic">
-            Trained and Certified under Celebrity Coach Shivoham
           </p>
 
           {/* CTA Buttons */}

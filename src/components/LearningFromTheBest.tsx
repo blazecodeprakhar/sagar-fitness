@@ -3,7 +3,6 @@ import shivohamTrainingVideo from "@/assets/shivoham-training.mp4";
 
 const LearningFromTheBest = () => {
   const achievements = [
-    "Trained personally under Shivoham",
     "Train The Trainer certification under Shivoham",
     "UFTLB Certification under Shivoham",
     "Attended in-person advanced training camps led by Shivoham",

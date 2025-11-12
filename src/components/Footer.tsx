@@ -1,20 +1,59 @@
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import redlogo from "../assets/redlogo.png";
 
 const Footer = () => {
+  const location = useLocation();
+
+  // Handle scrolling to top of About page after navigation
+  useEffect(() => {
+    if (location.pathname === "/about") {
+      const shouldScrollToTop = sessionStorage.getItem("scrollToAboutTop");
+      if (shouldScrollToTop) {
+        sessionStorage.removeItem("scrollToAboutTop");
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location.pathname]);
+
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    if (window.location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Handle About Us link click - always scroll to top
+  const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === "/about") {
+      // If already on About page, scroll to top
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // If not on About page, navigate and scroll to top after
+      sessionStorage.setItem("scrollToAboutTop", "true");
+    }
   };
 
   // Smooth scroll to section
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    // Hash links only work on home page
+    if (href.startsWith("#")) {
+      if (window.location.pathname !== "/") {
+        // Navigate to home first, then scroll
+        window.location.href = `/${href}`;
+        return;
+      }
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -23,7 +62,8 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         {/* ===== Top Section: Logo + Description ===== */}
         <div className="flex flex-col items-start text-left mb-10">
-          <div
+          <Link
+            to="/"
             onClick={scrollToTop}
             className="relative w-36 h-14 mb-4 group cursor-pointer"
           >
@@ -37,7 +77,7 @@ const Footer = () => {
               alt="Sagar Fitness Red"
               className="w-full h-full object-contain absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
-          </div>
+          </Link>
 
           <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-3xl">
             Your all-in-one fitness destination — from professional training guidance to transformation programs 
@@ -150,6 +190,15 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2.5 text-sm text-gray-400">
               <li>
+                <Link 
+                  to="/about"
+                  onClick={handleAboutClick}
+                  className="hover:text-red-500 transition-colors duration-200 inline-block"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
                 <a 
                   href="#results" 
                   onClick={(e) => {
@@ -159,11 +208,6 @@ const Footer = () => {
                   className="hover:text-red-500 transition-colors duration-200 inline-block"
                 >
                   Testimonials
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-red-500 transition-colors duration-200 inline-block">
-                  Events
                 </a>
               </li>
               <li>
