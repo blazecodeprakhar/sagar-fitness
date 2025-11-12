@@ -1,207 +1,263 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Separator } from "@/components/ui/separator";
+import { X } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Award, Dumbbell } from "lucide-react";
 import shivohamTrainingVideo from "@/assets/shivoham-training.mp4";
 
+const skills = [
+  "Certified Actor — Ramanaidu Film School, Hyderabad",
+  "Calisthenics practitioner (trained under Coach Deepak Mali)",
+  "Traditional martial arts — Lathi Kathi & Sword Training",
+  "Flipkart model experience",
+  "Horse riding enthusiast",
+  "Bachelor of Engineering in Mechanical",
+];
 
-const About = () => {
-  const certifications = [
-    "Bachelor of Engineering in Mechanical",
-    "Certified Fitness Trainer, Gold’s Gym Fitness Institute",
-    "Train The Trainer certification under Celebrity Coach Shivoham",
-    "UFTLB certification under Celebrity Coach Shivoham",
-    "Advanced Energy Healing Practitioner under Celebrity Coach Vrinda Bhutt",
-    "Certified Sword and Lathi Kathi Trainer, Shivaji Raje Mardani Akhada Pune",
-    "Attended Calisthenics training under Celebrity Coach Deepak Mali",
-    "Certified Actor, Ramanaidu Film School Hyderabad",
-  ];
+const galleryImages = [
+  { src: "/assets/IMG_0310.JPG" },
+  { src: "/assets/IMG_1593.JPEG" },
+  { src: "/assets/IMG_4993.JPEG" },
+  { src: "/assets/IMG_9205.png" },
+  { src: "/assets/IMG_9541.png" },
+  { src: "/assets/IMG_9543.png" },
+];
 
-  const approach = [
-    "Correct form and safe movement",
-    "Mind–muscle connection",
-    "Strength and mobility",
-    "Sustainable nutrition and habits",
-    "Consistent support and progress tracking",
-  ];
+const AboutSagar = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-[#0B0B0B] text-white flex flex-col">
       <Header />
 
-      {/* Hero Section */}
-      <section className="pt-28 pb-20 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="text-red-500 text-sm uppercase font-semibold mb-3">
-            Who I Am
-          </p>
-          <h1 className="text-4xl md:text-5xl font-semi-bold mb-5 leading-tight">
-            Building Strength with Science and Discipline
-          </h1>
-          <p className="text-gray-300 leading-relaxed text-lg">
-            I’m <span className="text-white font-semibold">Sagar</span>, a
-            fitness coach trained under Celebrity Coach Shivoham, with a
-            foundation in Mechanical Engineering. I bring a structured and
-            scientific approach to training — focused on correct technique,
-            mind–muscle connection, and long-term progress.
-          </p>
-          <p className="text-gray-400 leading-relaxed mt-4">
-            Engineering taught me clarity, discipline, and problem-solving.
-            Fitness helped me turn those skills into strength, confidence, and
-            consistency. Now, I help others do the same — through discipline,
-            awareness, and lasting transformation.
-          </p>
-        </motion.div>
+      {/* ABOUT HERO */}
+      <section className="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
+          {/* Left Text Section */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8"
+          >
+            <div className="space-y-3">
+              <p className="text-red-500 text-xs sm:text-sm uppercase font-semibold tracking-[0.3em]">
+                Who I Am
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font- leading-tight text-white">
+                I am Sagar, a coach who trains body and mind
+              </h1>
+            </div>
 
-        {/* Right Image */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center"
-        >
-          <img
-            src="/assets/coach-photo.jpg"
-            alt="Coach Sagar"
-            className="rounded-2xl shadow-xl w-full h-[420px] object-cover border border-gray-800"
-          />
-        </motion.div>
+            <div className="space-y-5 text-gray-300 text-base sm:text-lg leading-relaxed">
+              <p>
+                I am <span className="font-semibold text-white">Sagar</span>, a certified fitness coach who believes
+                growth goes beyond physical strength. My journey blends creative expression, athletic discipline, and
+                continuous learning, helping me bring balance and awareness into every aspect of life.
+              </p>
+              <p className="text-gray-400">
+                Engineering taught me discipline and problem-solving; fitness taught me patience and focus. I combine both
+                to coach with structure, mindfulness, and long-term sustainability.
+              </p>
+            </div>
+
+            {/* Skills Section */}
+            <div className="rounded-2xl border border-[#1D1D1D] bg-[#101010] p-6 sm:p-8 shadow-lg shadow-black/25 hover:shadow-black/40 transition-all duration-300">
+              <h3 className="text-lg sm:text-2xl uppercase tracking-[0.25em] text-red-500 mb-6 text-center sm:text-left">
+                Skills & Background
+              </h3>
+              <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base leading-relaxed sm:leading-loose pl-1">
+                {skills.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 leading-relaxed transition-all duration-200 hover:text-white"
+                  >
+                    <span className="text-red-500 text-base sm:text-lg mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-[520px] lg:max-w-[580px] rounded-[32px] overflow-hidden border border-[#1D1D1D] shadow-2xl shadow-black/40 bg-[#0E0E0E]">
+              <img
+                src="/assets/IMG_0310.JPG"
+                alt="Coach Sagar"
+                className="w-full h-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700 ease-out"
+              />
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* Education & Certifications */}
-      <section className="max-w-6xl mx-auto px-6 pb-10">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left text block */}
-          <div>
-            <h2 className="text-4xl md:text-red-500 font- mb-4 leading-tight">
-              Education & Certifications
+      {/* COACH SHIVOHAM */}
+      <section className="py-16 md:py-24 bg-[#0B0B0B] text-white">
+        <div className="container mx-auto px-6 lg:px-12 xl:px-20">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading mb-5 uppercase tracking-wide">
+              Training Under Coach Shivoham
             </h2>
-            <p className="text-gray-300 leading-relaxed text-lg">
-              My educational foundation and continuous learning define my
-              coaching philosophy — blending technical understanding with
-              practical application. Each certification deepens my ability to
-              train, heal, and guide with precision.
-            </p>
+            <div className="w-64 md:w-80 h-[3px] bg-gradient-to-r from-transparent via-[#e50914] to-transparent mx-auto rounded-full"></div>
           </div>
 
-          {/* Right List of Certifications */}
-          <div>
-            <ul className="space-y-4">
-              {certifications.map((cert, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 text-gray-300 hover:text-white transition-all"
-                >
-                  <Award className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
-                  <span className="text-base">{cert}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
+            {/* Left Video */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[360px] md:max-w-[420px] rounded-3xl overflow-hidden shadow-2xl border border-[#1f1f1f] bg-[#101010]">
+                <div className="aspect-[9/16] relative">
+                  <video
+                    src={shivohamTrainingVideo}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls
+                    preload="metadata"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Right Text */}
+            <div className="space-y-6">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+                Training and growing under the guidance of{" "}
+                <span className="text-[#e50914] font-semibold">
+                  Celebrity Fitness Coach Shivoham.
+                </span>
+              </p>
+
+              <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
+                My fitness journey took shape under the guidance of Celebrity Coach Shivoham, one of India’s most respected
+                fitness and transformation experts. Training with him strengthened my foundation in form, structure, and discipline, and deepened my understanding of the mind–muscle connection.
+              </p>
+
+              <div className="space-y-4 pt-2 md:pt-4">
+                {[
+                  "Train The Trainer certification under Shivoham",
+                  "UFTLB Certification under Shivoham",
+                  "Attended in-person advanced training camps led by Shivoham",
+                ].map((achievement, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 md:gap-4 animate-fade-in"
+                    style={{
+                      animationDelay: `${index * 0.15}s`,
+                      animationFillMode: "forwards",
+                    }}
+                  >
+                    <div className="w-6 h-6 flex-shrink-0 rounded-full bg-[#e50914]/20 flex items-center justify-center mt-0.5">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-4 h-4 text-[#e50914]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed">
+                      {achievement}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-6 md:pt-8 border-t border-[#1f1f1f]">
+                <p className="text-base sm:text-lg md:text-xl text-[#e50914] font-semibold italic text-center lg:text-left">
+                  Elite learning, applied to everyday fitness transformations.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why This Matters */}
-      <section className="max-w-6xl mx-auto px-6 pb-10">
+      {/* BEYOND FITNESS */}
+      <section className="px-6 pb-20 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="rounded-3xl border border-[#1D1D1D] bg-[#101010] p-6 sm:p-8 lg:p-12 shadow-2xl shadow-black/20 space-y-6 text-gray-300"
         >
-          <h2 className="text-3xl font- text-red-500 mb-4">
-            Why This Matters
-          </h2>
-          <p className="text-gray-300 leading-relaxed text-lg mb-4">
-            I don’t just teach workouts — I teach awareness, control, and
-            confidence. Fitness isn’t only about building the body — it’s about
-            shaping discipline, awareness, and the ability to lead yourself
-            every day.
-          </p>
-          <p className="text-gray-400 leading-relaxed">
-            Every program I design focuses on long-term strength, mental focus,
-            and personal growth. It’s not about quick results — it’s about
-            becoming the best version of yourself, inside and out.
+          <div className="space-y-3">
+            <p className="text-xs sm:text-sm uppercase font-semibold tracking-[0.3em] text-red-500">
+              Beyond Fitness
+            </p>
+            <h2 className="text-3xl sm:text-4xl text-white">
+              Strength with awareness, discipline, and balance
+            </h2>
+          </div>
+
+          <p className="text-base sm:text-lg leading-relaxed">
+            Fitness is shaped by more than workouts. My experience in acting, modeling, martial arts, and horse riding has helped me build focus, balance, and confidence. These qualities reflect in my coaching style — combining strength, control, and mindfulness.
           </p>
         </motion.div>
       </section>
 
-      {/* Coaching Approach + Beyond Fitness with Video */}
-      <section className="max-w-6xl mx-auto px-6 pb-20 grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Side Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font- text-red-500 mb-4">
-            Coaching Approach
-          </h2>
-          <p className="text-gray-300 leading-relaxed mb-4">
-            I focus on:
+      {/* GALLERY */}
+      <section className="px-6 pb-24 max-w-7xl mx-auto relative">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <div>
+            <p className="text-xs sm:text-sm uppercase font-semibold tracking-[0.3em] text-red-500">Gallery</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">Stories Behind The Journey</h2>
+          </div>
+          <p className="text-sm text-gray-500 max-w-sm">
+            Every moment captures a milestone — from performing arts to elite training.
           </p>
-          <ul className="space-y-3 text-gray-300 mb-6">
-            {[
-              "Correct form and safe movement",
-              "Mind–muscle connection",
-              "Strength and mobility",
-              "Sustainable nutrition and habits",
-              "Consistent support and progress tracking",
-            ].map((item, i) => (
-              <li key={i} className="flex items-center gap-3">
-                <Dumbbell className="w-5 h-5 text-red-500 flex-shrink-0" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-gray-200 font-medium mb-10">
-            My goal is simple — make fitness achievable, disciplined, and lifelong.
-          </p>
+        </div>
 
-          <h2 className="text-3xl font- text-red-500 mb-4">
-            Beyond Fitness
-          </h2>
-          <p className="text-gray-300 leading-relaxed">
-            Fitness is shaped by more than workouts. Performance, discipline,
-            awareness, and control make the journey complete. My journey blends
-            physical training with performing arts, martial discipline, and
-            creative awareness. Every experience adds depth to how I coach and
-            how I support clients.
-          </p>
-        </motion.div>
+        <div className="grid gap-5 sm:gap-6 grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
+          {galleryImages.map(({ src }, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-2xl border border-[#1D1D1D] bg-[#111111] shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              onClick={() => setSelectedImage(src)}
+            >
+              <img
+                src={src}
+                alt={`Gallery ${index + 1}`}
+                className="h-full w-full object-cover aspect-[3/4] transform group-hover:scale-105 transition-transform duration-500 ease-out"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <p className="text-white font-medium text-sm sm:text-base tracking-wide">Click to View</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
-{/* Right Side Video */}
-<motion.div
-  initial={{ opacity: 0, x: 30 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.6 }}
-  className="flex justify-center"
->
-  <video
-    src={shivohamTrainingVideo}
-    controls
-    loop
-    playsInline
-    autoPlay
-    muted
-    className="rounded-2xl border border-gray-800 shadow-lg w-[280px] md:w-[340px] lg:w-[400px] aspect-[9/16] object-cover"
-  >
-    Your browser does not support the video tag.
-  </video>
-</motion.div>
-
+        {selectedImage && (
+          <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 backdrop-blur-sm transition-opacity duration-300">
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-6 text-white hover:text-red-500 transition-colors z-50"
+            >
+              <X size={36} />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Expanded View"
+              className="max-w-[90%] max-h-[85vh] rounded-3xl border border-[#222] shadow-2xl object-contain transition-transform duration-300"
+            />
+          </div>
+        )}
       </section>
-
-      <Separator className="max-w-5xl mx-auto bg-gray-700 mb-16" />
 
       <Footer />
     </div>
   );
 };
 
-export default About;
+export default AboutSagar;
