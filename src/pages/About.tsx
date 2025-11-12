@@ -38,14 +38,11 @@ const AboutSagar = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div className="space-y-3">
-              <p className="text-red-500 text-xs sm:text-sm uppercase font-semibold tracking-[0.3em]">
+            <div className="space-y-2">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font- leading-tight text-red-500">
                 Who I Am
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font- leading-tight text-white">
-                I am Sagar, a coach who trains body and mind
               </h1>
             </div>
 
@@ -103,7 +100,7 @@ const AboutSagar = () => {
         <div className="container mx-auto px-6 lg:px-12 xl:px-20">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading mb-5 uppercase tracking-wide">
-              Training Under Coach Shivoham
+              Learning From The Best
             </h2>
             <div className="w-64 md:w-80 h-[3px] bg-gradient-to-r from-transparent via-[#e50914] to-transparent mx-auto rounded-full"></div>
           </div>
@@ -202,23 +199,13 @@ const AboutSagar = () => {
           </div>
 
           <p className="text-base sm:text-lg leading-relaxed">
-            Fitness is shaped by more than workouts. My experience in acting, modeling, martial arts, and horse riding has helped me build focus, balance, and confidence. These qualities reflect in my coaching style — combining strength, control, and mindfulness.
+            Fitness is shaped by more than workouts. My experience in <span className="text-[#e50914]">acting, modeling, martial arts, and horse riding </span>has helped me build focus, balance, and confidence. These qualities reflect in my coaching style — combining strength, control, and mindfulness.
           </p>
         </motion.div>
       </section>
 
       {/* GALLERY */}
       <section className="px-6 pb-24 max-w-7xl mx-auto relative">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-          <div>
-            <p className="text-xs sm:text-sm uppercase font-semibold tracking-[0.3em] text-red-500">Gallery</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">Stories Behind The Journey</h2>
-          </div>
-          <p className="text-sm text-gray-500 max-w-sm">
-            Every moment captures a milestone — from performing arts to elite training.
-          </p>
-        </div>
-
         <div className="grid gap-5 sm:gap-6 grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
           {galleryImages.map(({ src }, index) => (
             <div

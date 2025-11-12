@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const scrollToProgram = () => {
-    const element = document.querySelector("#program");
+    const element = document.querySelector("#exclusive-programs");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }

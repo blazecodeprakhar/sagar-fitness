@@ -13,7 +13,7 @@ const Pricing = () => {
   ];
 
   const scrollToProgram = () => {
-    const element = document.querySelector("#program");
+    const element = document.querySelector("#exclusive-programs");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }

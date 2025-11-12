@@ -52,11 +52,11 @@ const ProgramGoals = () => {
                 {goal.description}
               </p>
               <a
-                href="#pricing"
+                href="#exclusive-programs"
                 className="inline-block mt-3 sm:mt-4 text-xs sm:text-sm text-primary hover:text-accent transition-colors uppercase tracking-wide font-semibold"
                 onClick={(e) => {
                   e.preventDefault();
-                  const element = document.querySelector("#pricing");
+                  const element = document.querySelector("#exclusive-programs");
                   if (element) {
                     element.scrollIntoView({ behavior: "smooth" });
                   }

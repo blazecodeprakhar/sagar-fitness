@@ -23,12 +23,11 @@ const Header = () => {
 
   const navLinks = [
     { label: "Home", href: "#home", isRoute: false },
-    { label: "Program", href: "#program", isRoute: false },
-    { label: "Coach", href: "#coach", isRoute: false },
-    { label: "About", href: "/about", isRoute: true },
+    { label: "Program", href: "#exclusive-programs", isRoute: false },
     { label: "Results", href: "#results", isRoute: false },
     { label: "FAQs", href: "#faqs", isRoute: false },
     { label: "Contact", href: "#contact", isRoute: false },
+    { label: "About", href: "/about", isRoute: true },
   ];
 
   // Smooth scroll to section and close mobile menu
@@ -160,7 +159,7 @@ const Header = () => {
 
           {/* CTA Button - Desktop */}
           <Button
-            onClick={() => handleHashLink("#program")}
+            onClick={() => handleHashLink("#exclusive-programs")}
             className="hidden lg:inline-flex bg-primary hover:bg-accent text-primary-foreground font-bold uppercase tracking-wider btn-glow"
             aria-label="Start your 3-month transformation program"
           >
