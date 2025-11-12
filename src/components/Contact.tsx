@@ -16,6 +16,7 @@ import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa"
 
 const Contact = () => {
   const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -23,32 +24,56 @@ const Contact = () => {
     goal: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // ===========================
+  // WORKING WEB3FORMS SUBMIT LOGIC
+  // ===========================
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const form = new FormData();
+    form.append("access_key", "eccf24e4-acfa-411e-939e-685bba8c6131");
+    form.append("name", formData.name);
+    form.append("email", formData.email);
+    form.append("phone", formData.phone);
+    form.append("goal", formData.goal);
+    form.append("message", formData.message);
 
-    toast({
-      title: "Thanks! I will get back to you soon.",
-      description: "Your message has been received successfully.",
-    });
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: form,
+    }).then((res) => res.json());
 
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      goal: "",
-      message: "",
-    });
+    if (res.success) {
+      toast({
+        title: "Thanks! I will get back to you soon.",
+        description: "Your message has been received successfully.",
+      });
+
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        goal: "",
+        message: "",
+      });
+    } else {
+      toast({
+        title: "Error!",
+        description: "Something went wrong, please try again.",
+      });
+    }
+
     setIsSubmitting(false);
   };
 
   return (
     <section id="contact" className="py-16 sm:py-20 bg-[#0D0D0D] text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* ===== Header ===== */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-heading mb-4 uppercase leading-tight">
@@ -62,14 +87,16 @@ const Contact = () => {
 
         {/* ===== Main Layout ===== */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-stretch">
-          {/* ===== Left: Contact Form ===== */}
+
+          {/* ===== LEFT: WORKING CONTACT FORM ===== */}
           <div className="bg-[#101010] border border-[#1a1a1a] rounded-2xl p-6 sm:p-8 shadow-lg flex flex-col justify-between h-full">
             <form
               onSubmit={handleSubmit}
               className="space-y-6 flex-1 flex flex-col justify-between"
             >
               <div className="space-y-6">
-                {/* Name and Email */}
+
+                {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="name">Full Name *</Label>
@@ -102,7 +129,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Phone and Goal */}
+                {/* Phone + Goal */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="phone">Phone Number *</Label>
@@ -167,14 +194,12 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* ===== Right: Contact Info ===== */}
+          {/* ===== RIGHT: CONTACT INFO (UNCHANGED) ===== */}
           <div className="space-y-6 flex flex-col justify-start h-full">
-            {/* Title */}
             <h1 className="text-2xl sm:text-3xl font-medium mb-3 uppercase">
               Get in Touch
             </h1>
 
-            {/* Description */}
             <p className="text-gray-400 mb-4 text-sm sm:text-base leading-relaxed">
               We're here to help you begin your fitness transformation.
             </p>
@@ -188,11 +213,9 @@ const Contact = () => {
                 className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#1873EA] transition-all duration-300 group"
                 aria-label="Facebook"
               >
-                <FaFacebookF
-                  size={18}
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
+                <FaFacebookF size={18} className="group-hover:scale-110 transition-transform duration-300" />
               </a>
+
               <a
                 href="https://www.instagram.com/sagarfitness__"
                 target="_blank"
@@ -200,11 +223,9 @@ const Contact = () => {
                 className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#CA00C0] transition-all duration-300 group"
                 aria-label="Instagram"
               >
-                <FaInstagram
-                  size={18}
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
+                <FaInstagram size={18} className="group-hover:scale-110 transition-transform duration-300" />
               </a>
+
               <a
                 href="https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+transformation+program.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
                 target="_blank"
@@ -212,11 +233,9 @@ const Contact = () => {
                 className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#25CC63] transition-all duration-300 group"
                 aria-label="WhatsApp"
               >
-                <FaWhatsapp
-                  size={18}
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
+                <FaWhatsapp size={18} className="group-hover:scale-110 transition-transform duration-300" />
               </a>
+
               <a
                 href="https://www.youtube.com/@sagargatlewar"
                 target="_blank"
@@ -224,10 +243,7 @@ const Contact = () => {
                 className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FF0000] transition-all duration-300 group"
                 aria-label="YouTube"
               >
-                <FaYoutube
-                  size={18}
-                  className="group-hover:scale-110 transition-transform duration-300"
-                />
+                <FaYoutube size={18} className="group-hover:scale-110 transition-transform duration-300" />
               </a>
             </div>
 
@@ -270,6 +286,7 @@ const Contact = () => {
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </div>
