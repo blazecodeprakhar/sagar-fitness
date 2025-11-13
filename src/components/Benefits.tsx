@@ -7,7 +7,7 @@ const Benefits = () => {
     "Home friendly workouts",
     "Real time form correction",
     "Weekly progress tracking",
-    "Diet line guidance",
+    "Diet guidance",
     "Beginner friendly and injury safe",
     "Direct WhatsApp support",
   ];

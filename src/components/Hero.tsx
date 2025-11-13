@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-light">
-            Simple home workouts. Clear guidance. Visible results in 12 weeks.
+            Science based home workouts. Clear guidance. Visible results in 12 weeks.
           </p>
 
           {/* CTA Buttons */}
@@ -52,11 +52,11 @@ const Hero = () => {
             Everyone starts somewhere. We progress step by step and stay consistent.
           </p>
 
-          {/* Trust Badges */}
+          {/* Trust Badges 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-xs text-muted-foreground uppercase tracking-wider">
             <span className="opacity-60">As Trained By:</span>
             <span className="font-semibold">Gold's Gym Fitness Institute</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

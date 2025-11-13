@@ -3,9 +3,9 @@ import shivohamTrainingVideo from "@/assets/shivoham-training.mp4";
 
 const LearningFromTheBest = () => {
   const achievements = [
-    "Train The Trainer certification under Shivoham",
-    "UFTLB Certification under Shivoham",
-    "Attended in-person advanced training camps led by Shivoham",
+    "Train The Trainer certification under Shivoham Sir",
+    "UFTLB Certification under Shivoham Sir",
+    "Attended in-person advanced training camps led by Shivoham Sir",
   ];
 
   return (
@@ -44,12 +44,12 @@ const LearningFromTheBest = () => {
             <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
               Training and growing under the guidance of{" "}
               <span className="text-[#e50914] font-semibold">
-                Celebrity Fitness Coach Shivoham.
+                Celebrity Fitness Coach Shivoham Sir.
               </span>
             </p>
 
             <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
-              Sagar has trained and earned multiple certifications under Coach Shivoham, one of
+              Sagar has trained and earned multiple certifications under Coach Shivoham Sir, one of
               India’s most respected fitness and transformation experts known for training top
               athletes and actors.
             </p>

@@ -4,6 +4,12 @@ import { Card } from "@/components/ui/card";
 const ProgramGoals = () => {
   const goals = [
     {
+      icon: <Dumbbell className="w-12 h-12 text-primary" />,
+      title: "Body Recomposition",
+      description:
+        "Transform your physique by burning fat and building strength.",
+    },
+    {
       icon: <TrendingDown className="w-12 h-12 text-primary" />,
       title: "Weight Loss",
       description: "Burn fat safely with structured workouts and habit coaching.",
@@ -18,12 +24,7 @@ const ProgramGoals = () => {
       title: "Body Toning",
       description: "Shape and strengthen your body with guided strength and mobility work.",
     },
-    {
-      icon: <Dumbbell className="w-12 h-12 text-primary" />,
-      title: "Body Recomposition",
-      description:
-        "Transform your physique by burning fat and building strength.",
-    },
+
   ];
 
   return (

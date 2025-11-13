@@ -8,9 +8,9 @@ const ExclusivePrograms = () => {
       subtitle: "Package 1",
       details: [
         "5 days/week · 20 sessions/month",
-        "Home workouts (mind muscle connection)",
+        "Science based home workouts (mind muscle connection)",
         "Nutrition guidance",
-        "Weekly knowledge session (90 min)",
+        "Weekly group knowledge sessions on fitness",
         "WhatsApp community",
         "1-on-1 consultation",
         "Group training",
@@ -23,9 +23,9 @@ const ExclusivePrograms = () => {
       subtitle: "Package 2",
       details: [
         "3 days/week · 12 sessions/month",
-        "Home workouts (mind muscle connection)",
+        "Science based home workouts (mind muscle connection)",
         "Nutrition guidance",
-        "Weekly knowledge session",
+        "Weekly group knowledge sessions on fitness",
         "WhatsApp community",
         "1-on-1 consultation",
         "Group training",

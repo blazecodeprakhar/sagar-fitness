@@ -3,8 +3,8 @@ import coachImage from "@/assets/coach-photo.jpg";
 
 const Coach = () => {
   const credentials = [
-    "Train The Trainer certification under Celebrity Coach Shivoham",
-    "UFTLB certification under Celebrity Coach Shivoham",
+    "Train The Trainer certification under Celebrity Coach Shivoham Sir",
+    "UFTLB certification under Celebrity Coach Shivoham Sir",
     "Certified Fitness Trainer, Gold's Gym Fitness Institute",
     "Advanced Energy Healing Practitioner under Celebrity Coach Vrinda Bhutt",
     "Certified Sword and Lathi Kathi Trainer, Shivaji Raje Mardani Akhada Pune",

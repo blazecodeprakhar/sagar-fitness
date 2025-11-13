@@ -30,70 +30,74 @@ const AboutSagar = () => {
     <div className="min-h-screen bg-[#0B0B0B] text-white flex flex-col">
       <Header />
 
-      {/* ABOUT HERO */}
-      <section className="pt-24 pb-20 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
-          {/* Left Text Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font- leading-tight text-red-500">
-                Who I Am
-              </h1>
-            </div>
+{/* ABOUT HERO */}
+<section className="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+  <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
 
-            <div className="space-y-5 text-gray-300 text-base sm:text-lg leading-relaxed">
-              <p>
-                I am <span className="font-semibold text-white">Sagar</span>, a certified fitness coach who believes
-                growth goes beyond physical strength. My journey blends creative expression, athletic discipline, and
-                continuous learning, helping me bring balance and awareness into every aspect of life.
-              </p>
-              <p className="text-gray-400">
-                Engineering taught me discipline and problem-solving; fitness taught me patience and focus. I combine both
-                to coach with structure, mindfulness, and long-term sustainability.
-              </p>
-            </div>
+    {/* Right Image — BUT shown FIRST on mobile */}
+    <motion.div
+      initial={{ opacity: 0, x: 30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      className="flex justify-center lg:justify-end order-1 lg:order-2"
+    >
+      <div className="relative w-full max-w-[520px] lg:max-w-[580px] rounded-[32px] overflow-hidden border border-[#1D1D1D] shadow-2xl shadow-black/40 bg-[#0E0E0E]">
+        <img
+          src="/assets/IMG_0310.JPG"
+          alt="Coach Sagar"
+          className="w-full h-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700 ease-out"
+        />
+      </div>
+    </motion.div>
 
-            {/* Skills Section */}
-            <div className="rounded-2xl border border-[#1D1D1D] bg-[#101010] p-6 sm:p-8 shadow-lg shadow-black/25 hover:shadow-black/40 transition-all duration-300">
-              <h3 className="text-lg sm:text-2xl uppercase tracking-[0.25em] text-red-500 mb-6 text-center sm:text-left">
-                Skills & Background
-              </h3>
-              <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base leading-relaxed sm:leading-loose pl-1">
-                {skills.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2 leading-relaxed transition-all duration-200 hover:text-white"
-                  >
-                    <span className="text-red-500 text-base sm:text-lg mt-1">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
+    {/* Left Text Section — BUT shown SECOND on mobile */}
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      className="space-y-6 order-2 lg:order-1"
+    >
+      <div className="space-y-2">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font- leading-tight text-red-500">
+          Who I Am
+        </h1>
+      </div>
 
-          {/* Right Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <div className="relative w-full max-w-[520px] lg:max-w-[580px] rounded-[32px] overflow-hidden border border-[#1D1D1D] shadow-2xl shadow-black/40 bg-[#0E0E0E]">
-              <img
-                src="/assets/IMG_0310.JPG"
-                alt="Coach Sagar"
-                className="w-full h-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <div className="space-y-5 text-gray-300 text-base sm:text-lg leading-relaxed">
+        <p>
+          I am <span className="font-semibold text-white">Sagar</span>, a certified fitness coach who believes
+          growth goes beyond physical strength. My journey blends creative expression,
+          athletic discipline, and continuous learning.
+        </p>
+        <p className="text-gray-400">
+          Engineering taught me discipline and problem-solving; fitness taught me
+          patience and focus. I combine both to coach with structure, mindfulness, and
+          long-term sustainability.
+        </p>
+      </div>
+
+      {/* Skills Section */}
+      <div className="rounded-2xl border border-[#1D1D1D] bg-[#101010] p-6 sm:p-8 shadow-lg shadow-black/25 hover:shadow-black/40 transition-all duration-300">
+        <h3 className="text-lg sm:text-2xl uppercase tracking-[0.25em] text-red-500 mb-6 text-center sm:text-left">
+          Skills & Background
+        </h3>
+        <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base leading-relaxed sm:leading-loose pl-1">
+          {skills.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-2 leading-relaxed transition-all duration-200 hover:text-white"
+            >
+              <span className="text-red-500 text-base sm:text-lg mt-1">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+
+  </div>
+</section>
+
 
       {/* COACH SHIVOHAM */}
       <section className="py-16 md:py-24 bg-[#0B0B0B] text-white">
@@ -129,20 +133,20 @@ const AboutSagar = () => {
               <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
                 Training and growing under the guidance of{" "}
                 <span className="text-[#e50914] font-semibold">
-                  Celebrity Fitness Coach Shivoham.
+                  Celebrity Fitness Coach Shivoham Sir.
                 </span>
               </p>
 
               <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
-                My fitness journey took shape under the guidance of Celebrity Coach Shivoham, one of India’s most respected
+                My fitness journey took shape under the guidance of Celebrity Coach Shivoham Sir, one of India's most respected
                 fitness and transformation experts. Training with him strengthened my foundation in form, structure, and discipline, and deepened my understanding of the mind–muscle connection.
               </p>
 
               <div className="space-y-4 pt-2 md:pt-4">
                 {[
-                  "Train The Trainer certification under Shivoham",
-                  "UFTLB Certification under Shivoham",
-                  "Attended in-person advanced training camps led by Shivoham",
+                  "Train The Trainer certification under Shivoham Sir",
+                  "UFTLB Certification under Shivoham Sir",
+                  "Attended in-person advanced training camps led by Shivoham Sir",
                 ].map((achievement, index) => (
                   <div
                     key={index}
