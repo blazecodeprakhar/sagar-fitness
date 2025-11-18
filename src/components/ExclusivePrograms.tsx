@@ -40,6 +40,7 @@ const ExclusivePrograms = () => {
         "5 days/week · 20 sessions/month",
         "Fully personalised program",
         "1-on-1 live training",
+        "Weekly group knowledge sessions on fitness",
         "Mind muscle focused workouts",
         "Custom nutrition support",
         "Weekly deep-dive session",

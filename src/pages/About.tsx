@@ -10,7 +10,8 @@ const skills = [
   "Calisthenics practitioner (trained under Coach Deepak Mali)",
   "Traditional martial arts — Lathi Kathi & Sword Training",
   "Flipkart model experience",
-  "Horse riding enthusiast",
+  "Train The Trainer certification under Celebrity Coach Shivoham Sir",
+  "Advanced Energy Healing Practitioner under Celebrity Coach Vrinda Bhutt",
   "Bachelor of Engineering in Mechanical",
 ];
 
@@ -203,48 +204,95 @@ const AboutSagar = () => {
           </div>
 
           <p className="text-base sm:text-lg leading-relaxed">
-            Fitness is shaped by more than workouts. My experience in <span className="text-[#e50914]">acting, modeling, martial arts, and horse riding </span>has helped me build focus, balance, and confidence. These qualities reflect in my coaching style — combining strength, control, and mindfulness.
+            Fitness is shaped by more than workouts. My experience in <span className="text-[#e50914]">acting, modeling, martial arts, horse riding and Mental health </span>has helped me build focus, balance, and confidence. These qualities reflect in my coaching style combining strength, control, and mindfulness.
           </p>
         </motion.div>
       </section>
 
-      {/* GALLERY */}
-      <section className="px-6 pb-24 max-w-7xl mx-auto relative">
-        <div className="grid gap-5 sm:gap-6 grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
-          {galleryImages.map(({ src }, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-2xl border border-[#1D1D1D] bg-[#111111] shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-              onClick={() => setSelectedImage(src)}
-            >
-              <img
-                src={src}
-                alt={`Gallery ${index + 1}`}
-                className="h-full w-full object-cover aspect-[3/4] transform group-hover:scale-105 transition-transform duration-500 ease-out"
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <p className="text-white font-medium text-sm sm:text-base tracking-wide">Click to View</p>
-              </div>
-            </div>
-          ))}
-        </div>
 
-        {selectedImage && (
-          <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 backdrop-blur-sm transition-opacity duration-300">
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 text-white hover:text-red-500 transition-colors z-50"
-            >
-              <X size={36} />
-            </button>
-            <img
-              src={selectedImage}
-              alt="Expanded View"
-              className="max-w-[90%] max-h-[85vh] rounded-3xl border border-[#222] shadow-2xl object-contain transition-transform duration-300"
-            />
-          </div>
-        )}
-      </section>
+{/* GALLERY – Alternating Clean Layout (fixed) */}
+<section className="px-6 pb-24 max-w-6xl mx-auto space-y-28">
+  {[
+    {
+      img: "/assets/IMG_0588.jpg",
+      title: "Skills and Experience",
+      text:
+        "This certification taught me structured coaching, clear communication and step-by-step guidance, refining the way I teach movement and technique.",
+    },
+    {
+      img: "/assets/IMG_1593.JPEG",
+      title: "Acting",
+      text:
+        "Acting training taught me expression, focus and confidence. It improved my body language and presence, which helps me guide posture and control during workouts.",
+    },
+    {
+      img: "/assets/IMG_4993.JPEG",
+      title: "Modeling",
+      text:
+        "Modeling for Flipkart strengthened my discipline, presentation and attention to detail. It improved my posture and body awareness — all of which I apply when teaching alignment.",
+    },
+    {
+      img: "/assets/IMG_9543.png",
+      title: "Martial Arts",
+      text:
+        "Traditional martial arts like Lathi Kathi and Sword Training built strength, precision and balance. These improve my coordination and mental focus as a coach.",
+    },
+    {
+      img: "/assets/IMG_9541.png",
+      title: "Horse Riding",
+      text:
+        "Horse riding taught me patience, rhythm and calm body control. It helps me bring mindful movement and stability into every client session.",
+    },
+  ].map((item, index) => (
+    <div
+      key={index}
+      /* Use column on mobile, row on lg. Reverse the row on odd indices. */
+      className={`flex flex-col lg:flex-row items-start gap-8 lg:gap-12 ${
+        index % 2 === 1 ? "lg:flex-row-reverse" : ""
+      }`}
+    >
+      {/* IMAGE */}
+      <motion.div
+        initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex-shrink-0 w-full lg:w-5/12 flex justify-center"
+      >
+        <div className="relative w-full max-w-[420px] rounded-2xl overflow-hidden border border-[#1D1D1D] bg-[#0F0F0F] shadow-lg">
+          {/* Keep aspect but allow height to scale naturally for a smaller image */}
+          <img
+            src={item.img}
+            alt={item.title}
+            className="w-full h-auto object-cover block"
+            style={{ borderRadius: 12 }}
+          />
+        </div>
+      </motion.div>
+
+      {/* TEXT (force start alignment so it sits at the top of the image) */}
+      <motion.div
+        initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="w-full lg:w-7/12 self-start"
+      >
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-red-500 uppercase tracking-wide">
+          {item.title}
+        </h3>
+
+        <p className="mt-4 text-gray-300 text-sm sm:text-base leading-relaxed max-w-prose">
+          {item.text}
+        </p>
+      </motion.div>
+    </div>
+  ))}
+</section>
+
+
+
+
 
       <Footer />
     </div>

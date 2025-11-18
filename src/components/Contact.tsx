@@ -159,6 +159,7 @@ const Contact = () => {
                         <SelectValue placeholder="Choose your goal" />
                       </SelectTrigger>
                       <SelectContent>
+                        <SelectItem value="body-toning">Body Recomposition</SelectItem>
                         <SelectItem value="weight-loss">Weight Loss</SelectItem>
                         <SelectItem value="weight-gain">Weight Gain</SelectItem>
                         <SelectItem value="body-toning">Body Toning</SelectItem>

@@ -94,16 +94,13 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2.5 text-sm text-gray-400">
               <li>
-                <a 
-                  href="#coach" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("#coach");
-                  }}
+                <Link
+                  to="/about"
+                  onClick={handleAboutClick}
                   className="hover:text-red-500 transition-colors duration-200 inline-block"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
                 <a 
