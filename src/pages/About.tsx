@@ -6,12 +6,12 @@ import Footer from "@/components/Footer";
 import shivohamTrainingVideo from "@/assets/shivoham-training.mp4";
 
 const skills = [
+  "Train The Trainer certification under Celebrity Coach Shivoham Sir",
+  "Advanced Energy Healing Practitioner under Celebrity Coach Vrinda Bhutt",
   "Certified Actor — Ramanaidu Film School, Hyderabad",
   "Calisthenics practitioner (trained under Coach Deepak Mali)",
   "Traditional martial arts — Lathi Kathi & Sword Training",
   "Flipkart model experience",
-  "Train The Trainer certification under Celebrity Coach Shivoham Sir",
-  "Advanced Energy Healing Practitioner under Celebrity Coach Vrinda Bhutt",
   "Bachelor of Engineering in Mechanical",
 ];
 
