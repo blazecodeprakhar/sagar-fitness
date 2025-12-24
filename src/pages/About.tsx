@@ -1,19 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import shivohamTrainingVideo from "@/assets/shivoham-training.mp4";
 
-const skills = [
-  "Train The Trainer certification under Celebrity Coach Shivoham Sir",
-  "Advanced Energy Healing Practitioner under Celebrity Coach Vrinda Bhutt",
-  "Certified Actor — Ramanaidu Film School, Hyderabad",
-  "Calisthenics practitioner (trained under Coach Deepak Mali)",
-  "Traditional martial arts — Lathi Kathi & Sword Training",
-  "Flipkart model experience",
-  "Bachelor of Engineering in Mechanical",
-];
+
 
 const galleryImages = [
   { src: "/assets/IMG_0310.JPG" },
@@ -26,82 +19,131 @@ const galleryImages = [
 
 const AboutSagar = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const handleUrlClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    sessionStorage.setItem("scrollToHash", "#home");
+    navigate("/");
+  };
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-white flex flex-col">
+    <div className="min-h-screen bg-[#0B0B0B] text-white flex flex-col overflow-x-hidden">
       <Header />
 
-{/* ABOUT HERO */}
-<section className="pt-24 pb-20 px-6 max-w-7xl mx-auto">
-  <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
+      {/* ABOUT HERO */}
+      {/* ABOUT HERO */}
+      <section className="pt-24 pb-10 md:pb-20 px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-12 lg:gap-20">
 
-    {/* Right Image — BUT shown FIRST on mobile */}
-    <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
-      className="flex justify-center lg:justify-end order-1 lg:order-2"
-    >
-      <div className="relative w-full max-w-[520px] lg:max-w-[580px] rounded-[32px] overflow-hidden border border-[#1D1D1D] shadow-2xl shadow-black/40 bg-[#0E0E0E]">
-        <img
-          src="/assets/IMG_0310.JPG"
-          alt="Coach Sagar"
-          className="w-full h-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700 ease-out"
-        />
-      </div>
-    </motion.div>
+          {/* Right Image — BUT shown FIRST on mobile */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center lg:justify-end order-1 lg:order-2 lg:sticky lg:top-24"
+          >
+            <div className="relative w-full max-w-[520px] lg:max-w-[580px] rounded-[32px] overflow-hidden border border-[#1D1D1D] shadow-2xl shadow-black/40 bg-[#0E0E0E]">
+              <img
+                src="/assets/IMG_0310.JPG"
+                alt="Coach Sagar"
+                className="w-full h-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700 ease-out"
+              />
+            </div>
+          </motion.div>
 
-    {/* Left Text Section — BUT shown SECOND on mobile */}
-    <motion.div
-      initial={{ opacity: 0, x: -30 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
-      className="space-y-6 order-2 lg:order-1"
-    >
-      <div className="space-y-2">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font- leading-tight text-red-500">
-          Who I Am
-        </h1>
-      </div>
+          {/* Left Text Section — BUT shown SECOND on mobile */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8 order-2 lg:order-1"
+          >
+            {/* Title & Subtitle */}
+            <div className="space-y-3">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                About <span className="text-red-500">Us</span>
+              </h1>
+              <h2 className="text-xl sm:text-2xl text-gray-300 font-medium tracking-wide">
+                Mind. Body. Beyond.
+              </h2>
+            </div>
 
-      <div className="space-y-5 text-gray-300 text-base sm:text-lg leading-relaxed">
-        <p>
-          I am <span className="font-semibold text-white">Sagar</span>, a certified fitness coach who believes
-          growth goes beyond physical strength. My journey blends creative expression,
-          athletic discipline, and continuous learning.
-        </p>
-        <p className="text-gray-400">
-          Engineering taught me discipline and problem-solving; fitness taught me
-          patience and focus. I combine both to coach with structure, mindfulness, and
-          long-term sustainability.
-        </p>
-      </div>
+            {/* Intro */}
+            <div className="space-y-6 text-gray-300 text-base sm:text-lg leading-relaxed">
+              <p>
+                At <span className="text-white font-semibold">Sagar Fitness</span>, transformation goes far beyond physical appearance. We believe real change happens when the mind, body, and emotions work in alignment.
+              </p>
+              <p>
+                Founded by <span className="text-white font-semibold">Sagar Gatlwar</span>, an actor, fitness coach, and mental health coach, Sagar Fitness is built on the philosophy of the <span className="text-red-500">Mind–Muscle Connection</span> — training with awareness, intention, and emotional balance to create lasting results.
+              </p>
+            </div>
 
-      {/* Skills Section */}
-      <div className="rounded-2xl border border-[#1D1D1D] bg-[#101010] p-6 sm:p-8 shadow-lg shadow-black/25 hover:shadow-black/40 transition-all duration-300">
-        <h3 className="text-lg sm:text-2xl uppercase tracking-[0.25em] text-red-500 mb-6 text-center sm:text-left">
-          Skills & Background
-        </h3>
-        <ul className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base leading-relaxed sm:leading-loose pl-1">
-          {skills.map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-2 leading-relaxed transition-all duration-200 hover:text-white"
-            >
-              <span className="text-red-500 text-base sm:text-lg mt-1">•</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </motion.div>
+            {/* Holistic Approach */}
+            <div className="space-y-3">
+              <h3 className="text-3xl font-heading tracking-wide uppercase text-white">A Holistic Approach to Fitness & Well-Being</h3>
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                Fitness is not just about workouts. It’s about mindset, discipline, emotional strength, and self-expression. At <a href="/" onClick={handleUrlClick} className="text-red-500 hover:underline">www.sagarfitness.in</a>, we help individuals grow physically, mentally, and emotionally, so transformation feels complete, not forced.
+              </p>
+            </div>
 
-  </div>
-</section>
+            {/* How Sagar Helps */}
+            <div className="space-y-4">
+              <h3 className="text-3xl font-heading tracking-wide uppercase text-white">How Sagar Gatlwar Helps You Transform</h3>
+              <ul className="space-y-4 text-gray-300 text-base sm:text-lg leading-relaxed">
+                <li className="flex gap-3">
+                  <span className="text-red-500 font-bold">•</span>
+                  <span>
+                    <strong className="text-white">Physically</strong> – As a fitness coach, Sagar helps you build strength, stamina, mobility, and confidence through structured and mindful training.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-red-500 font-bold">•</span>
+                  <span>
+                    <strong className="text-white">Mentally</strong> – As a mental health coach, he focuses on clarity, focus, stress management, and building a resilient mindset.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-red-500 font-bold">•</span>
+                  <span>
+                    <strong className="text-white">Emotionally</strong> – As an actor, Sagar brings emotional intelligence, self-expression, presence, and confidence helping you connect deeper with yourself and others.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Mind-Muscle & Beyond */}
+            <div className="space-y-8">
+              <div className="space-y-3">
+                <h3 className="text-3xl font-heading tracking-wide uppercase text-white">Mind–Muscle Connection, Beyond the Gym</h3>
+                <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                  Every movement has meaning. By strengthening the mind-muscle connection, training becomes more effective, sustainable, and empowering. This approach ensures that your body responds not just to effort but to awareness.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="text-3xl font-heading tracking-wide uppercase text-white">Beyond Fitness</h3>
+                <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                  Sagar Fitness is not about quick transformations or shortcuts. It’s about building a lifestyle where your body supports your goals, your mind stays focused, and your emotions become your strength.
+                </p>
+              </div>
+            </div>
+
+            {/* Footer tagline */}
+            <div className="pt-6 md:pt-8 border-t border-[#1f1f1f]">
+              <p className="text-2xl sm:text-3xl md:text-4xl text-[#e50914] font-semibold italic text-center lg:text-left">
+                "Train the Body."
+              </p>
+            </div>
+
+          </motion.div>
+
+        </div>
+      </section>
 
 
       {/* COACH SHIVOHAM */}
-      <section className="py-16 md:py-24 bg-[#0B0B0B] text-white">
+      <section className="py-10 md:py-24 bg-[#0B0B0B] text-white">
         <div className="container mx-auto px-6 lg:px-12 xl:px-20">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading mb-5 uppercase tracking-wide">
@@ -204,91 +246,97 @@ const AboutSagar = () => {
           </div>
 
           <p className="text-base sm:text-lg leading-relaxed">
-            Fitness is shaped by more than workouts. My experience in <span className="text-[#e50914]">acting, modeling, martial arts, horse riding and Mental health </span>has helped me build focus, balance, and confidence. These qualities reflect in my coaching style combining strength, control, and mindfulness.
+            Fitness is shaped by more than workouts. My experience in <span className="text-[#e50914]">acting, modeling, martial arts, horse riding and mental health </span>has helped me build focus, balance, and confidence. These qualities reflect in my coaching style combining strength, control, and mindfulness.
           </p>
         </motion.div>
       </section>
 
 
-{/* GALLERY – Alternating Clean Layout (fixed) */}
-<section className="px-6 pb-24 max-w-6xl mx-auto space-y-28">
-  {[
-    {
-      img: "/assets/IMG_0588.jpg",
-      title: "Skills and Experience",
-      text:
-        "This certification taught me structured coaching, clear communication and step-by-step guidance, refining the way I teach movement and technique.",
-    },
-    {
-      img: "/assets/IMG_1593.JPEG",
-      title: "Acting",
-      text:
-        "Acting training taught me expression, focus and confidence. It improved my body language and presence, which helps me guide posture and control during workouts.",
-    },
-    {
-      img: "/assets/IMG_4993.JPEG",
-      title: "Modeling",
-      text:
-        "Modeling for Flipkart strengthened my discipline, presentation and attention to detail. It improved my posture and body awareness — all of which I apply when teaching alignment.",
-    },
-    {
-      img: "/assets/IMG_9543.png",
-      title: "Martial Arts",
-      text:
-        "Traditional martial arts like Lathi Kathi and Sword Training built strength, precision and balance. These improve my coordination and mental focus as a coach.",
-    },
-    {
-      img: "/assets/IMG_9541.png",
-      title: "Horse Riding",
-      text:
-        "Horse riding taught me patience, rhythm and calm body control. It helps me bring mindful movement and stability into every client session.",
-    },
-  ].map((item, index) => (
-    <div
-      key={index}
-      /* Use column on mobile, row on lg. Reverse the row on odd indices. */
-      className={`flex flex-col lg:flex-row items-start gap-8 lg:gap-12 ${
-        index % 2 === 1 ? "lg:flex-row-reverse" : ""
-      }`}
-    >
-      {/* IMAGE */}
-      <motion.div
-        initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex-shrink-0 w-full lg:w-5/12 flex justify-center"
-      >
-        <div className="relative w-full max-w-[420px] rounded-2xl overflow-hidden border border-[#1D1D1D] bg-[#0F0F0F] shadow-lg">
-          {/* Keep aspect but allow height to scale naturally for a smaller image */}
-          <img
-            src={item.img}
-            alt={item.title}
-            className="w-full h-auto object-cover block"
-            style={{ borderRadius: 12 }}
-          />
-        </div>
-      </motion.div>
+      {/* GALLERY – Alternating Clean Layout (fixed) */}
+      <section className="px-6 pb-24 max-w-6xl mx-auto space-y-28">
+        {[
+          {
+            img: "/assets/IMG_0588.jpg",
+            title: "Skills and Experience",
+            text:
+              "This certification taught me structured coaching, clear communication and step-by-step guidance, refining the way I teach movement and technique.",
+          },
+          {
+            img: "/assets/IMG_1593.JPEG",
+            title: "Acting",
+            text:
+              "Acting training taught me expression, focus and confidence. It improved my body language and presence, which helps me guide posture and control during workouts.",
+          },
+          {
+            img: "/assets/IMG_4993.JPEG",
+            title: "Modeling",
+            text:
+              "Modeling for Flipkart strengthened my discipline, presentation and attention to detail. It improved my posture and body awareness — all of which I apply when teaching alignment.",
+          },
+          {
+            img: "/assets/IMG_9543.png",
+            title: "Martial Arts",
+            text:
+              "Traditional martial arts like Lathi Kathi and Sword Training built strength, precision and balance. These improve my coordination and mental focus as a coach.",
+          },
+          {
+            img: "/assets/IMG_9541.png",
+            title: "Horse Riding",
+            text:
+              "Horse riding taught me patience, rhythm and calm body control. It helps me bring mindful movement and stability into every client session.",
+          },
+          {
+            img: "/assets/IMG_95421.png",
+            title: "Mental Health",
+            text:
+              "Regular mindfulness, discipline, and self-reflection help maintain emotional balance and mental clarity. These practices improve focus, stress management, and overall well-being in both personal and professional life.",
+          },
 
-      {/* TEXT (force start alignment so it sits at the top of the image) */}
-      <motion.div
-        initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="w-full lg:w-7/12 self-start"
-      >
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-red-500 uppercase tracking-wide">
-          {item.title}
-        </h3>
+        ].map((item, index) => (
+          <div
+            key={index}
+            /* Use column on mobile, row on lg. Reverse the row on odd indices. */
+            className={`flex flex-col lg:flex-row items-start gap-8 lg:gap-12 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+              }`}
+          >
+            {/* IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex-shrink-0 w-full lg:w-5/12 flex justify-center"
+            >
+              <div className="relative w-full max-w-[420px] rounded-2xl overflow-hidden border border-[#1D1D1D] bg-[#0F0F0F] shadow-lg">
+                {/* Keep aspect but allow height to scale naturally for a smaller image */}
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-auto object-cover block"
+                  style={{ borderRadius: 12 }}
+                />
+              </div>
+            </motion.div>
 
-        <p className="mt-4 text-gray-300 text-sm sm:text-base leading-relaxed max-w-prose">
-          {item.text}
-        </p>
-      </motion.div>
-    </div>
-  ))}
-</section>
+            {/* TEXT (force start alignment so it sits at the top of the image) */}
+            <motion.div
+              initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="w-full lg:w-7/12 self-start"
+            >
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-red-500 uppercase tracking-wide">
+                {item.title}
+              </h3>
+
+              <p className="mt-4 text-gray-300 text-sm sm:text-base leading-relaxed max-w-prose">
+                {item.text}
+              </p>
+            </motion.div>
+          </div>
+        ))}
+      </section>
 
 
 

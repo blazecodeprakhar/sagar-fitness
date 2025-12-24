@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import logo from "../assets/logo.png";
@@ -6,6 +6,7 @@ import redlogo from "../assets/redlogo.png";
 
 const Footer = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Handle scrolling to top of About page after navigation
   useEffect(() => {
@@ -26,6 +27,10 @@ const Footer = () => {
         top: 0,
         behavior: "smooth",
       });
+    } else {
+      // If not on home, regular nav will go to top, but we can ensure consistent behavior
+      navigate("/");
+      window.scrollTo(0, 0);
     }
   };
 
@@ -45,9 +50,10 @@ const Footer = () => {
   const scrollToSection = (href: string) => {
     // Hash links only work on home page
     if (href.startsWith("#")) {
-      if (window.location.pathname !== "/") {
+      if (location.pathname !== "/") {
         // Navigate to home first, then scroll
-        window.location.href = `/${href}`;
+        sessionStorage.setItem("scrollToHash", href);
+        navigate("/");
         return;
       }
       const element = document.querySelector(href);
@@ -80,7 +86,7 @@ const Footer = () => {
           </Link>
 
           <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-3xl">
-            Your all-in-one fitness destination — from professional training guidance to transformation programs 
+            Your all-in-one fitness destination — from professional training guidance to transformation programs
             and nutrition support. Power up your workouts and stay consistent with Sagar Fitness.
           </p>
         </div>
@@ -103,8 +109,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="#benefits" 
+                <a
+                  href="#benefits"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection("#benefits");
@@ -115,8 +121,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection("#contact");
@@ -127,8 +133,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#faqs" 
+                <a
+                  href="#faqs"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection("#faqs");
@@ -187,7 +193,7 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2.5 text-sm text-gray-400">
               <li>
-                <Link 
+                <Link
                   to="/about"
                   onClick={handleAboutClick}
                   className="hover:text-red-500 transition-colors duration-200 inline-block"
@@ -196,8 +202,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="#results" 
+                <a
+                  href="#results"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection("#results");
@@ -208,8 +214,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#coach" 
+                <a
+                  href="#coach"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection("#coach");
@@ -228,8 +234,8 @@ const Footer = () => {
               Connect With Us
             </h3>
             <div className="flex justify-start items-center space-x-3 mb-5">
-              <a 
-                href="https://www.facebook.com/share/166pnDhWZL/?mibextid=wwXIfr" 
+              <a
+                href="https://www.facebook.com/share/166pnDhWZL/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#1873EA] transition-all duration-300 group"
@@ -246,8 +252,8 @@ const Footer = () => {
               >
                 <FaInstagram size={18} className="group-hover:scale-110 transition-transform duration-300" />
               </a>
-              <a 
-                href="https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+transformation+program.+Can+you+share+more+details%3F&type=phone_number&app_absent=0" 
+              <a
+                href="https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+transformation+program.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#25CC63] transition-all duration-300 group"
@@ -255,8 +261,8 @@ const Footer = () => {
               >
                 <FaWhatsapp size={18} className="group-hover:scale-110 transition-transform duration-300" />
               </a>
-              <a 
-                href="https://www.youtube.com/@sagargatlewar" 
+              <a
+                href="https://www.youtube.com/@sagargatlewar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FF0000] transition-all duration-300 group"
@@ -267,16 +273,16 @@ const Footer = () => {
             </div>
             <div className="space-y-1.5">
               <p className="text-sm text-gray-400 font-medium">
-                <a 
-                  href="mailto:contact@sagarfitness.com" 
+                <a
+                  href="mailto:contact@sagarfitness.com"
                   className="hover:text-red-500 transition-colors duration-200 inline-block"
                 >
                   contact@sagarfitness.com
                 </a>
               </p>
               <p className="text-sm text-gray-400 font-medium">
-                <a 
-                  href="tel:+919284649579" 
+                <a
+                  href="tel:+919284649579"
                   className="hover:text-red-500 transition-colors duration-200 inline-block"
                 >
                   +91 92846 49579
