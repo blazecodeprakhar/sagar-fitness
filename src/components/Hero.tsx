@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const scrollToProgram = () => {
     const element = document.querySelector("#exclusive-programs");
     if (element) {
@@ -45,6 +48,16 @@ const Hero = () => {
               aria-label="Start your 3-month transformation program"
             >
               Start Your 3-Month Program
+            </Button>
+
+            <Button
+              onClick={() => navigate("/about")}
+              size="lg"
+              variant="outline"
+              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-black font-bold uppercase tracking-wider text-sm sm:text-base md:text-lg px-6 sm:px-8 py-4 sm:py-6 transition-all duration-300"
+              aria-label="Learn more about us"
+            >
+              About Us
             </Button>
           </div>
 

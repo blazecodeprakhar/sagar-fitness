@@ -11,12 +11,15 @@ import FAQs from "@/components/FAQs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
+import FitnessPrograms from "@/components/FitnessPrograms";
+
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <main>
         <Hero />
+        <FitnessPrograms />
         <ExclusivePrograms />
         <LearningFromTheBest />
         <Coach />

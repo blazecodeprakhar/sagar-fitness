@@ -86,11 +86,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-card/90 backdrop-blur-md border-b border-border"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4">
         {/* Header container with reduced height on mobile */}
@@ -99,10 +98,8 @@ const Header = () => {
           <Link
             to="/"
             onClick={(e) => {
-              if (location.pathname === "/") {
-                e.preventDefault();
-                handleHashLink("#home");
-              }
+              e.preventDefault();
+              handleHashLink("#home");
             }}
             className="relative group flex items-center justify-center h-8 sm:h-10 lg:h-14 max-w-[140px] sm:max-w-[160px] lg:max-w-[180px] transition-all duration-300 cursor-pointer"
             aria-label="Sagar Fitness Home"

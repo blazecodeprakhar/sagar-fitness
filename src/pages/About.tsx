@@ -62,9 +62,9 @@ const AboutSagar = () => {
             {/* Title & Subtitle */}
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                About <span className="text-red-500">Us</span>
+                About <span className="text-[#e50914]">Us</span>
               </h1>
-              <h2 className="text-xl sm:text-2xl text-gray-300 font-medium tracking-wide">
+              <h2 className="text-xl sm:text-2xl text-[#e50914] font-medium tracking-wide">
                 Mind. Body. Beyond.
               </h2>
             </div>
@@ -81,48 +81,25 @@ const AboutSagar = () => {
 
             {/* Holistic Approach */}
             <div className="space-y-3">
-              <h3 className="text-3xl font-heading tracking-wide uppercase text-white">A Holistic Approach to Fitness & Well-Being</h3>
+              <h3 className="text-3xl font-heading tracking-wide uppercase text-[#e50914]">A Holistic Approach to Fitness & Well-Being</h3>
               <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                 Fitness is not just about workouts. It’s about mindset, discipline, emotional strength, and self-expression. At <a href="/" onClick={handleUrlClick} className="text-red-500 hover:underline">www.sagarfitness.in</a>, we help individuals grow physically, mentally, and emotionally, so transformation feels complete, not forced.
               </p>
             </div>
 
-            {/* How Sagar Helps */}
-            <div className="space-y-4">
-              <h3 className="text-3xl font-heading tracking-wide uppercase text-white">How Sagar Gatlwar Helps You Transform</h3>
-              <ul className="space-y-4 text-gray-300 text-base sm:text-lg leading-relaxed">
-                <li className="flex gap-3">
-                  <span className="text-red-500 font-bold">•</span>
-                  <span>
-                    <strong className="text-white">Physically</strong> – As a fitness coach, Sagar helps you build strength, stamina, mobility, and confidence through structured and mindful training.
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-red-500 font-bold">•</span>
-                  <span>
-                    <strong className="text-white">Mentally</strong> – As a mental health coach, he focuses on clarity, focus, stress management, and building a resilient mindset.
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-red-500 font-bold">•</span>
-                  <span>
-                    <strong className="text-white">Emotionally</strong> – As an actor, Sagar brings emotional intelligence, self-expression, presence, and confidence helping you connect deeper with yourself and others.
-                  </span>
-                </li>
-              </ul>
-            </div>
+
 
             {/* Mind-Muscle & Beyond */}
             <div className="space-y-8">
               <div className="space-y-3">
-                <h3 className="text-3xl font-heading tracking-wide uppercase text-white">Mind–Muscle Connection, Beyond the Gym</h3>
+                <h3 className="text-3xl font-heading tracking-wide uppercase text-[#e50914]">Mind–Muscle Connection, Beyond the Gym</h3>
                 <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                   Every movement has meaning. By strengthening the mind-muscle connection, training becomes more effective, sustainable, and empowering. This approach ensures that your body responds not just to effort but to awareness.
                 </p>
               </div>
 
               <div className="space-y-3">
-                <h3 className="text-3xl font-heading tracking-wide uppercase text-white">Beyond Fitness</h3>
+                <h3 className="text-3xl font-heading tracking-wide uppercase text-[#e50914]">Beyond Fitness</h3>
                 <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                   Sagar Fitness is not about quick transformations or shortcuts. It’s about building a lifestyle where your body supports your goals, your mind stays focused, and your emotions become your strength.
                 </p>
@@ -141,6 +118,89 @@ const AboutSagar = () => {
         </div>
       </section>
 
+      {/* HOW SAGAR HELPS TRANSFORM */}
+      <section className="py-16 md:py-24 bg-[#0B0B0B] text-white">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            {/* Image Side */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="rounded-[32px] overflow-hidden border border-[#1D1D1D] shadow-2xl shadow-black/40 bg-[#0E0E0E]">
+                <img
+                  src="/assets/IMG_9096.PNG"
+                  alt="Mind Body Beyond Transformation"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </motion.div>
+
+            {/* Content Side */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div className="space-y-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading uppercase text-white leading-tight">
+                  How Sagar Gatlwar Helps You <span className="text-[#e50914]">Transform</span>
+                </h2>
+                <div className="w-24 h-1 bg-[#e50914] rounded-full"></div>
+              </div>
+
+              <div className="space-y-8">
+                {/* Physically */}
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-[#e50914]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-dumbbell"><path d="m6.5 6.5 11 11" /><path d="m21 21-1-1" /><path d="m3 3 1 1" /><path d="m18 22 4-4" /><path d="m2 6 4-4" /><path d="m3 10 7-7" /><path d="m14 21 7-7" /></svg>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font uppercase text-white">Physically</h3>
+                    <p className="text-gray-400 leading-relaxed text-base sm:text-lg">
+                      As a fitness coach, Sagar helps you build strength, stamina, mobility, and confidence through structured and mindful training.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Mentally */}
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-[#e50914]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-brain"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" /><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" /><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" /><path d="M17.599 6.5a3 3 0 0 0 .399-1.375" /><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" /><path d="M3.477 10.896a4 4 0 0 1 .585-.396" /><path d="M19.938 10.5a4 4 0 0 1 .585.396" /><path d="M6 18a4 4 0 0 1-1.97-1.364" /><path d="M19.97 16.636A4 4 0 0 1 18 18" /></svg>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font uppercase text-white">Mentally</h3>
+                    <p className="text-gray-400 leading-relaxed text-base sm:text-lg">
+                      As a mental health coach, he focuses on clarity, focus, stress management, and building a resilient mindset.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Emotionally */}
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-[#e50914]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart-handshake"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.92 0l2.92 2.92" /></svg>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font uppercase text-white">Emotionally</h3>
+                    <p className="text-gray-400 leading-relaxed text-base sm:text-lg">
+                      As an actor, Sagar brings emotional intelligence, self-expression, presence, and confidence helping you connect deeper with yourself and others.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
 
       {/* COACH SHIVOHAM */}
       <section className="py-10 md:py-24 bg-[#0B0B0B] text-white">
