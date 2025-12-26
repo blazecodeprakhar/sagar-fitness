@@ -7,6 +7,11 @@ import transform8kg from "@/assets/transform-8kg.png";
 const Testimonials = () => {
   const transformations = [
     {
+      image: transform8kg,
+      alt: "Transformation Result - 8kg Weight Loss",
+      label: "-8 kg"
+    },
+    {
       image: transform10kg,
       alt: "Transformation Result - 10kg Weight Loss",
       label: "-10 kg"
@@ -15,11 +20,6 @@ const Testimonials = () => {
       image: transform13kg,
       alt: "Transformation Result - 13kg Weight Loss",
       label: "-13 kg"
-    },
-    {
-      image: transform8kg,
-      alt: "Transformation Result - 8kg Weight Loss",
-      label: "-8 kg"
     },
   ];
 

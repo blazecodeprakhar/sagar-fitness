@@ -7,7 +7,7 @@ const ExclusivePrograms = () => {
       title: "3-Month Transformation",
       subtitle: "Package 1",
       details: [
-        "5 days/week · 20 sessions/month",
+        "5 days/week",
         "Science based home workouts (mind muscle connection)",
         "Nutrition guidance",
         "Weekly group knowledge sessions on fitness",
@@ -16,13 +16,13 @@ const ExclusivePrograms = () => {
         "Group training",
         "Best for: faster results & consistency",
       ],
-      link: "https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+transformation+program.+Can+you+share+more+details%3F&type=phone_number&app_absent=0",
+      link: "https://api.whatsapp.com/send/?phone=919284649579&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+transformation+program.+Can+you+share+more+details%3F&type=phone_number&app_absent=0",
     },
     {
       title: "3-Month Starter Plan",
       subtitle: "Package 2",
       details: [
-        "3 days/week · 12 sessions/month",
+        "3 days/week",
         "Science based home workouts (mind muscle connection)",
         "Nutrition guidance",
         "Weekly group knowledge sessions on fitness",
@@ -31,13 +31,13 @@ const ExclusivePrograms = () => {
         "Group training",
         "Best for: beginners & busy schedules",
       ],
-      link: "https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+starter+plan.+Can+you+share+more+details%3F&type=phone_number&app_absent=0",
+      link: "https://api.whatsapp.com/send/?phone=919284649579&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+starter+plan.+Can+you+share+more+details%3F&type=phone_number&app_absent=0",
     },
     {
       title: "Celebrity Personal Coaching",
       subtitle: "Package 3",
       details: [
-        "5 days/week · 20 sessions/month",
+        "5 days/week",
         "Fully personalised program",
         "1-on-1 live training",
         "Weekly group knowledge sessions on fitness",
@@ -47,7 +47,7 @@ const ExclusivePrograms = () => {
         "Direct WhatsApp support",
         "Best for: premium personalised coaching",
       ],
-      link: "https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+celebrity+personal+coaching+program.+Can+you+share+more+details%3F&type=phone_number&app_absent=0",
+      link: "https://api.whatsapp.com/send/?phone=919284649579&text=Hi+Sagar%2C+I%27m+interested+in+the+celebrity+personal+coaching+program.+Can+you+share+more+details%3F&type=phone_number&app_absent=0",
     },
   ];
 

@@ -253,7 +253,7 @@ const Footer = () => {
                 <FaInstagram size={18} className="group-hover:scale-110 transition-transform duration-300" />
               </a>
               <a
-                href="https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+transformation+program.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
+                href="https://api.whatsapp.com/send/?phone=919284649579&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+transformation+program.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#25CC63] transition-all duration-300 group"

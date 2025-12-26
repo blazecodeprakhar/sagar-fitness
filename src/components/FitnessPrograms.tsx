@@ -4,31 +4,34 @@ import { Link } from "react-router-dom";
 const FitnessPrograms = () => {
     const programs = [
         {
-            title: "3 MONTHS HOME WORKOUT",
-            planName: "(PLATINUM PLAN)",
-            description: "30-day science-based home workout plan with personalized nutrition guidance and exclusive WhatsApp group access.",
-            price: "₹9,999 INR",
-            image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1000&auto=format&fit=crop", // Gym/Dumbbells
-            badge: "Platinum Plan",
-            link: "https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+platinum+plan.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
+            title: "Express Workout",
+            planName: "(12 Sessions A Month)",
+            schedule: "3 DAYS/WEEK",
+            description: "Science-based home workouts tailored for busy schedules. Efficient and effective training to stay fit on limited time.",
+            price: "₹14,900 INR",
+            image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop", // HIIT/Crossfit
+            badge: "Express Workout",
+            link: "https://api.whatsapp.com/send/?phone=919284649579&text=Hi+Sagar%2C+I%27m+interested+in+the+express+workout+plan.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
         },
         {
             title: "3 MONTHS HOME WORKOUT",
             planName: "(GOLD PLAN)",
-            description: "Science-based 30-day home workout program to build muscle, lose fat, and increase flexibility. Transform your physique without a gym.",
-            price: "₹5,499 INR",
-            image: "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1000&auto=format&fit=crop", // Home workout
+            schedule: "4 DAYS/WEEK",
+            description: "Science-based home workouts designed to build strength and consistency. Perfect for steady progress without a gym.",
+            price: "₹19,900 INR",
+            image: "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?q=80&w=1000&auto=format&fit=crop", // Home workout
             badge: "Gold Plan",
-            link: "https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+gold+plan.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
+            link: "https://api.whatsapp.com/send/?phone=919284649579&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+gold+plan.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
         },
         {
-            title: "Express Workout",
-            planName: "(12 Sessions A Month)",
-            description: "These powerful sessions are designed for busy professionals, entrepreneurs, and travelers who can't commit to daily workouts.",
-            price: "₹1,999 INR",
-            image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop", // HIIT/Crossfit
-            badge: "Express Workout",
-            link: "https://api.whatsapp.com/send/?phone=919876543210&text=Hi+Sagar%2C+I%27m+interested+in+the+express+workout+plan.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
+            title: "3 MONTHS HOME WORKOUT",
+            planName: "(PLATINUM PLAN)",
+            schedule: "5 DAYS/WEEK",
+            description: "Science-based home workouts with real-time live form correction, personalized nutrition guidelines, group training, and dedicated WhatsApp support.",
+            price: "₹24,900 INR",
+            image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1000&auto=format&fit=crop", // Gym/Dumbbells
+            badge: "Platinum Plan",
+            link: "https://api.whatsapp.com/send/?phone=919284649579&text=Hi+Sagar%2C+I%27m+interested+in+the+3-month+platinum+plan.+Can+you+share+more+details%3F&type=phone_number&app_absent=0"
         }
     ];
 
@@ -77,9 +80,16 @@ const FitnessPrograms = () => {
                                 <h3 className="text-2xl font uppercase text-white mb-1 leading-tight">
                                     {program.title}
                                 </h3>
-                                <h4 className="text-lg font uppercase text-red-600 mb-6 tracking-wide">
+                                <h4 className="text-lg font uppercase text-white mb-6 tracking-wide">
                                     {program.planName}
                                 </h4>
+
+                                {/* Schedule Highlight */}
+                                <div className="mb-4">
+                                    <span className="inline-block border border-red-600 rounded-full px-4 py-1 text-red-500 font-bold uppercase tracking-wider text-sm shadow-[0_0_10px_rgba(220,38,38,0.3)]">
+                                        {program.schedule}
+                                    </span>
+                                </div>
 
                                 {/* Description */}
                                 <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-8 flex-grow">
