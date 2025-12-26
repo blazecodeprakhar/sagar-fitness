@@ -27,7 +27,7 @@ const FAQs = () => {
       question: "What if I miss a session?",
       answer: "We adjust within the week when possible.",
     },
-    
+
   ];
 
   return (

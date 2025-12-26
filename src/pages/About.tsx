@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
@@ -25,6 +25,52 @@ const AboutSagar = () => {
     e.preventDefault();
     sessionStorage.setItem("scrollToHash", "#home");
     navigate("/");
+  };
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.muted = false;
+            video.currentTime = 0;
+            video.play().catch((error) => console.log("Autoplay prevented:", error));
+          } else {
+            video.pause();
+            video.muted = true;
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const handleContainerHover = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      videoRef.current.play().catch((e) => console.log("Hover play error", e));
+    }
+  };
+
+  const handleVideoPlay = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    const currentVideo = e.currentTarget;
+    document.querySelectorAll("video").forEach((v) => {
+      if (v !== currentVideo) {
+        v.pause();
+        v.muted = true;
+      }
+    });
   };
 
   return (
@@ -214,18 +260,25 @@ const AboutSagar = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
             {/* Left Video */}
-            <div className="flex justify-center lg:justify-end">
+            <div
+              className="flex justify-center lg:justify-end"
+              onMouseEnter={handleContainerHover}
+            >
               <div className="relative w-full max-w-[360px] md:max-w-[420px] rounded-3xl overflow-hidden shadow-2xl border border-[#1f1f1f] bg-[#101010]">
                 <div className="aspect-[9/16] relative">
                   <video
+                    ref={videoRef}
                     src={shivohamTrainingVideo}
                     className="absolute inset-0 w-full h-full object-cover"
-                    autoPlay
-                    loop
-                    muted
                     playsInline
                     controls
                     preload="metadata"
+                    onPlay={handleVideoPlay}
+                    onTouchStart={(e) => {
+                      const v = e.currentTarget;
+                      v.muted = false;
+                      v.play();
+                    }}
                   />
                 </div>
               </div>

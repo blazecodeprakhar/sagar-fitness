@@ -65,6 +65,11 @@ const Hero = () => {
             Everyone starts somewhere. We progress step by step and stay consistent.
           </p>
 
+          {/* Spacer to push the absolute image down so it doesn't cover the text */}
+          <div className="h-32 md:hidden"></div>
+
+
+
           {/* Trust Badges 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-xs text-muted-foreground uppercase tracking-wider">
             <span className="opacity-60">As Trained By:</span>

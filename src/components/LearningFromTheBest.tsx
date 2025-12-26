@@ -1,7 +1,57 @@
+import { useEffect, useRef } from "react";
 import { Check } from "lucide-react";
 import shivohamTrainingVideo from "@/assets/shivoham-training.mp4";
 
 const LearningFromTheBest = () => {
+  // Video ref for playback control
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Play unmuted when in view
+            video.muted = false;
+            video.currentTime = 0; // Optional: Reset playback state? User said "Reset playback state (optional but recommended)"
+            video.play().catch((error) => console.log("Autoplay prevented:", error));
+          } else {
+            // Pause and mute when out of view
+            video.pause();
+            video.muted = true;
+          }
+        });
+      },
+      { threshold: 0.6 } // 60% visibility required
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const handleContainerHover = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      videoRef.current.play().catch((e) => console.log("Hover play error", e));
+    }
+  };
+
+  const handleVideoPlay = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    const currentVideo = e.currentTarget;
+    document.querySelectorAll("video").forEach((v) => {
+      if (v !== currentVideo) {
+        v.pause();
+        v.muted = true;
+      }
+    });
+  };
+
   const achievements = [
     "Train The Trainer certification under Shivoham Sir",
     "UFTLB Certification under Shivoham Sir",
@@ -22,18 +72,26 @@ const LearningFromTheBest = () => {
         {/* ===== Two Column Layout ===== */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
           {/* ===== Left: Video Section ===== */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-1">
+          <div
+            className="flex justify-center lg:justify-end order-1 lg:order-1"
+            onMouseEnter={handleContainerHover}
+          >
             <div className="relative w-full max-w-[340px] sm:max-w-[380px] md:max-w-[420px] rounded-3xl overflow-hidden shadow-2xl border border-[#1f1f1f] bg-[#101010]">
               <div className="aspect-[9/16] relative">
                 <video
+                  ref={videoRef}
                   src={shivohamTrainingVideo}
                   className="absolute inset-0 w-full h-full object-cover"
-                  autoPlay
-                  loop
-                  muted
                   playsInline
                   controls
                   preload="metadata"
+                  onPlay={handleVideoPlay}
+                  onTouchStart={(e) => {
+                    // Ensure mobile tap plays it
+                    const v = e.currentTarget;
+                    v.muted = false;
+                    v.play();
+                  }}
                 />
               </div>
             </div>
