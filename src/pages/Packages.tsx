@@ -25,10 +25,10 @@ const Packages = () => {
                     title: "FOUNDATION RESET",
                     subtitle: "(Beginner)",
                     frequency: "3 DAYS/WEEK",
-                    description: "Science-based home workouts designed for fat-loss and building a strength foundation. Features mind–muscle connection training, live form correction, breathwork, and a daily routine reset for a holistic Mind • Body & Beyond experience.",
+                    description: "Fitness Foundation Introduction to Muscle & Exercise. Science-based home workouts. Features mind–muscle connection training, live form correction, breathwork, and a daily routine reset for a holistic Mind • Body & Beyond experience.",
                     pricing: [
-                        { label: "Online", amount: "₹3,000" },
-                        { label: "Offline", amount: "₹5,000" }
+                        { label: "Online", amount: "₹4,000" },
+                        { label: "Offline", amount: "₹6,000" }
                     ],
                     image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop"
                 },
@@ -36,11 +36,11 @@ const Packages = () => {
                     badge: "Celebrity Type",
                     title: "FOUNDATION RESET",
                     subtitle: "(Beginner)",
-                    frequency: "3 DAYS/WEEK",
+                    frequency: "5 DAYS/WEEK",
                     description: "Experience celebrity-style fat-loss training with a focus on deep mind–muscle connection. Includes live form correction in every session, energy activation breathwork, and structured daily routines for a complete lifestyle reset.",
                     pricing: [
-                        { label: "Online", amount: "₹4,000" },
-                        { label: "Offline", amount: "₹7,000" }
+                        { label: "Online", amount: "₹6,000" },
+                        { label: "Offline", amount: "₹8,000" }
                     ],
                     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop"
                 }
@@ -56,8 +56,8 @@ const Packages = () => {
                     frequency: "5 DAYS/WEEK",
                     description: "Intense science-based workouts for fat-loss and lean muscle toning. Focuses on posture, conditioning, and nutrition guidance to build discipline and achieve a sculpted physique through stress-friendly training.",
                     pricing: [
-                        { label: "Online", amount: "₹5,000" },
-                        { label: "Offline", amount: "₹8,000" }
+                        { label: "Online", amount: "₹6,000" },
+                        { label: "Offline", amount: "₹9,000" }
                     ],
                     image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1000&auto=format&fit=crop"
                 },
@@ -68,8 +68,8 @@ const Packages = () => {
                     frequency: "ONLINE / OFFLINE",
                     description: "A premium celebrity-style system for fat-loss and muscle toning. Emphasizes strong mind–muscle connection, meticulous posture fixing, and celebrity-inspired nutrition, with progress tracking for serious discipline.",
                     pricing: [
-                        { label: "Online", amount: "₹6,000" },
-                        { label: "Offline", amount: "₹9,000" }
+                        { label: "Online", amount: "₹7,000" },
+                        { label: "Offline", amount: "₹10,000" }
                     ],
                     image: "https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=1000&auto=format&fit=crop"
                 }
@@ -85,8 +85,8 @@ const Packages = () => {
                     frequency: "4 DAYS/WEEK",
                     description: "Advanced science-based strategies for body recomposition and deep mind-muscle connection. Includes live form correction, mobility work, injury prevention, and energy healing for guaranteed serious transformation results.",
                     pricing: [
-                        { label: "Online (3 Months)", amount: "₹18,990" },
-                        { label: "Offline", amount: "₹27,900" }
+                        { label: "Online (3 Months)", amount: "₹24,990" },
+                        { label: "Offline", amount: "₹29,900" }
                     ],
                     image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop"
                 },
@@ -94,7 +94,7 @@ const Packages = () => {
                     badge: "Warrior Conditioning",
                     title: "COMBAT FITNESS",
                     subtitle: "(Package 4)",
-                    frequency: "4 DAYS/WEEK",
+                    frequency: "4 DAYS/6 WEEK",
                     description: "Train like a warrior with science-based strength and conditioning. Features celebrity action-prep styles, lathi-kathi basics, and combat drills to build power, control, and a disciplined warrior mindset.",
                     pricing: [
                         { label: "Program cost", amount: "₹20,000" }
@@ -110,7 +110,7 @@ const Packages = () => {
                     badge: "Specialized",
                     title: "ACTOR & PRESENCE",
                     subtitle: "(Package 5)",
-                    frequency: "4 DAYS/WEEK",
+                    frequency: "4 DAYS/6 WEEK",
                     description: "Specialized conditioning for aspiring performers enhancing posture, movement, and presence. Focuses on breath control, emotional expression, confidence, and hormone awareness for calmness and command.",
                     pricing: [
                         { label: "Program cost", amount: "₹25,000" }
@@ -124,8 +124,8 @@ const Packages = () => {
                     frequency: "5 DAYS/WEEK",
                     description: "The ultimate VIP 1-on-1 experience with personalized workouts and advanced hormone optimization. Covers habit, sleep, and lifestyle regulation alongside energy healing and nervous system regulation for high-performance living.",
                     pricing: [
-                        { label: "3 Months", amount: "₹35k - ₹60k" },
-                        { label: "6 Months", amount: "₹70k - ₹1.2L" }
+                        { label: "3 Months", amount: "₹60k" },
+                        { label: "6 Months", amount: "₹1.2L" }
                     ],
                     image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=1000&auto=format&fit=crop"
                 }

@@ -5,7 +5,7 @@ const FitnessPrograms = () => {
     const programs = [
         {
             title: "3 MONTHS HOME WORKOUT",
-            planName: "Express Workout",
+            planName: "[Express Workout]",
             schedule: "3 DAYS/WEEK",
             description: "Science-based home workouts tailored for busy schedules. Efficient and effective training to stay fit on limited time.",
             price: "₹14,900 INR",

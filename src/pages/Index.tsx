@@ -37,9 +37,9 @@ const Index = () => {
         <ExclusivePrograms />
         <LearningFromTheBest />
         <Coach />
-        <ProgramGoals />
-        <Benefits />
         <Testimonials />
+        <Benefits />
+        <ProgramGoals />        
         <Pricing />
         <FAQs />
         <Contact />
