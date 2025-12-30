@@ -5,12 +5,7 @@ import heroImage from "@/assets/hero-bg.jpg";
 const Hero = () => {
   const navigate = useNavigate();
 
-  const scrollToProgram = () => {
-    const element = document.querySelector("#exclusive-programs");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
 
   return (
     <section
@@ -42,7 +37,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button
-              onClick={scrollToProgram}
+              onClick={() => navigate("/packages")}
               size="lg"
               className="bg-primary hover:bg-accent text-primary-foreground font-bold uppercase tracking-wider text-sm sm:text-base md:text-lg px-6 sm:px-8 py-4 sm:py-6 btn-glow"
               aria-label="Start your 3-month transformation program"

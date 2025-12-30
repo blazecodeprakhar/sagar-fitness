@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const FitnessPrograms = () => {
     const programs = [
         {
-            title: "Express Workout",
-            planName: "(12 Sessions A Month)",
+            title: "3 MONTHS HOME WORKOUT",
+            planName: "Express Workout",
             schedule: "3 DAYS/WEEK",
             description: "Science-based home workouts tailored for busy schedules. Efficient and effective training to stay fit on limited time.",
             price: "₹14,900 INR",
@@ -36,7 +36,7 @@ const FitnessPrograms = () => {
     ];
 
     return (
-        <section className="py-20 bg-background text-white">
+        <section id="programs" className="py-20 bg-background text-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}

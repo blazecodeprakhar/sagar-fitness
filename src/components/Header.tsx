@@ -23,7 +23,7 @@ const Header = () => {
 
   const navLinks = [
     { label: "Home", href: "#home", isRoute: false },
-    { label: "Program", href: "#exclusive-programs", isRoute: false },
+    { label: "Packages", href: "/packages", isRoute: true },
     { label: "Results", href: "#results", isRoute: false },
     { label: "FAQs", href: "#faqs", isRoute: false },
     { label: "Contact", href: "#contact", isRoute: false },
@@ -87,8 +87,8 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-card/90 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
+        ? "bg-card/90 backdrop-blur-md border-b border-border"
+        : "bg-transparent"
         }`}
     >
       <div className="container mx-auto px-4">
