@@ -1,4 +1,5 @@
 import { TrendingDown, TrendingUp, Target, Dumbbell } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 
 const ProgramGoals = () => {
@@ -52,19 +53,12 @@ const ProgramGoals = () => {
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {goal.description}
               </p>
-              <a
-                href="#exclusive-programs"
+              <Link
+                to="/packages"
                 className="inline-block mt-3 sm:mt-4 text-xs sm:text-sm text-primary hover:text-accent transition-colors uppercase tracking-wide font-semibold"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.querySelector("#exclusive-programs");
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
               >
                 Learn more →
-              </a>
+              </Link>
             </Card>
           ))}
         </div>

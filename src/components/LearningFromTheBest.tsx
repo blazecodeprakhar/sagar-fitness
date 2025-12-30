@@ -17,7 +17,7 @@ const LearningFromTheBest = () => {
             // Play unmuted when in view
             video.muted = false;
             video.currentTime = 0; // Optional: Reset playback state? User said "Reset playback state (optional but recommended)"
-            video.play().catch((error) => console.log("Autoplay prevented:", error));
+            video.play().catch(() => { });
           } else {
             // Pause and mute when out of view
             video.pause();
@@ -38,7 +38,7 @@ const LearningFromTheBest = () => {
   const handleContainerHover = () => {
     if (videoRef.current) {
       videoRef.current.muted = false;
-      videoRef.current.play().catch((e) => console.log("Hover play error", e));
+      videoRef.current.play().catch(() => { });
     }
   };
 

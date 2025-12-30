@@ -39,7 +39,7 @@ const AboutSagar = () => {
           if (entry.isIntersecting) {
             video.muted = false;
             video.currentTime = 0;
-            video.play().catch((error) => console.log("Autoplay prevented:", error));
+            video.play().catch(() => { });
           } else {
             video.pause();
             video.muted = true;

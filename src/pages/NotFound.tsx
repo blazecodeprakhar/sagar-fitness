@@ -30,7 +30,7 @@ const NotFound = () => {
         </h1>
 
         <div className="space-y-4">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font tracking-tight">
             Lost Your Way?
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
