@@ -259,7 +259,7 @@ const Contact = () => {
                 {
                   icon: <Mail className="w-6 h-6 text-[#e50914]" />,
                   title: "Email",
-                  detail: "contact@sagarfitness.com",
+                  detail: "contact@sagarfitness.in",
                 },
                 {
                   icon: <MapPin className="w-6 h-6 text-[#e50914]" />,

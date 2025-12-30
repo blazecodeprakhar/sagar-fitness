@@ -79,10 +79,11 @@ const Packages = () => {
             id: 3,
             cards: [
                 {
+                    highlight: true,
                     badge: "Body Recomposition",
                     title: "ELITE PERFORMANCE",
                     subtitle: "(Package 3)",
-                    frequency: "4 DAYS/WEEK",
+                    frequency: "5 DAYS/WEEK",
                     description: "Advanced science-based strategies for body recomposition and deep mind-muscle connection. Includes live form correction, mobility work, injury prevention, and energy healing for guaranteed serious transformation results.",
                     pricing: [
                         { label: "Online (3 Months)", amount: "₹24,990" },
@@ -167,8 +168,20 @@ const Packages = () => {
                                     {section.cards.map((card, idx) => (
                                         <div
                                             key={idx}
-                                            className="bg-[#0f0f0f] rounded-3xl overflow-hidden hover:shadow-[0_0_60px_rgba(229,9,20,0.1)] transition-all duration-500 group border border-[#1a1a1a]"
+                                            className={`
+                                                relative bg-[#0f0f0f] rounded-3xl overflow-hidden transition-all duration-500 group 
+                                                ${(card as any).highlight
+                                                    ? "border-2 border-[#E50914] shadow-[0_0_50px_rgba(229,9,20,0.3)] scale-[1.02] z-10"
+                                                    : "border border-[#1a1a1a] hover:shadow-[0_0_60px_rgba(229,9,20,0.1)]"}
+                                            `}
                                         >
+                                            {/* Most Recommended Badge */}
+                                            {(card as any).highlight && (
+                                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-[#E50914] text-white text-sm md:text-lg font-heading font-bold uppercase px-10 py-2.5 rounded-b-xl tracking-widest z-30 shadow-lg whitespace-nowrap">
+                                                    Most Recommended
+                                                </div>
+                                            )}
+
                                             {/* Image Header */}
                                             <div className="relative h-60 overflow-hidden">
                                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent z-10 opacity-90" />
@@ -177,9 +190,14 @@ const Packages = () => {
                                                     alt={card.title}
                                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                                 />
-                                                {/* Badge */}
-                                                <div className="absolute top-6 left-6 z-20">
-                                                    <span className="bg-white text-black text-sm font-heading uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg">
+                                                {/* Badge - Position based on highlight status to prevent overlap */}
+                                                <div className={`absolute z-20 ${(card as any).highlight ? "bottom-6 left-6" : "top-6 left-6"}`}>
+                                                    <span className={`
+                                                        text-sm font-heading uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg
+                                                        ${(card as any).highlight
+                                                            ? "bg-[#E50914] text-white"
+                                                            : "bg-white text-black"}
+                                                    `}>
                                                         {card.badge}
                                                     </span>
                                                 </div>
@@ -189,22 +207,22 @@ const Packages = () => {
                                             <div className="p-8 -mt-10 relative z-20 flex flex-col items-center text-center">
 
                                                 {/* Titles */}
-                                                <h3 className="text-2xl md:text-4xl font-heading uppercase tracking-tight text-white mb-2 leading-none">
+                                                <h3 className={`text-2xl md:text-4xl font-heading uppercase tracking-tight text-white mb-2 leading-none ${(card as any).highlight ? "text-[#E50914] drop-shadow-md" : ""}`}>
                                                     {card.title}
                                                 </h3>
-                                                <h4 className="text-lg md:text-xl font-heading uppercase text-gray-400 tracking-wider mb-6">
+                                                <h4 className={`text-lg md:text-xl font-heading uppercase text-gray-400 tracking-wider mb-6 ${(card as any).highlight ? "text-white" : ""}`}>
                                                     {card.subtitle}
                                                 </h4>
 
                                                 {/* Frequency Pill */}
                                                 <div className="mb-6">
-                                                    <span className="inline-block border border-[#E50914] text-[#E50914] text-sm font-heading uppercase px-6 py-2 rounded-full tracking-widest shadow-[0_0_15px_rgba(229,9,20,0.2)]">
+                                                    <span className={`inline-block border border-[#E50914] text-[#E50914] text-sm font-heading uppercase px-6 py-2 rounded-full tracking-widest shadow-[0_0_15px_rgba(229,9,20,0.2)] ${(card as any).highlight ? "bg-black/80 backdrop-blur-md" : ""}`}>
                                                         {card.frequency}
                                                     </span>
                                                 </div>
 
                                                 {/* Description */}
-                                                <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-md font-medium text-center">
+                                                <p className={`text-gray-400 text-sm md:text-base leading-relaxed mb-8 max-w-md font-medium text-center ${(card as any).highlight ? "text-gray-300" : ""}`}>
                                                     {card.description}
                                                 </p>
 
@@ -229,7 +247,12 @@ const Packages = () => {
                                                     href={createWhatsappLink(card.title, card.badge)}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="w-full bg-[#E50914] hover:bg-[#ff0a1b] text-white font-heading py-4 rounded text-lg uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_30px_rgba(229,9,20,0.4)] transform hover:-translate-y-1 block"
+                                                    className={`
+                                                        w-full font-heading py-4 rounded text-lg uppercase tracking-widest transition-all duration-300 transform hover:-translate-y-1 block
+                                                        ${(card as any).highlight
+                                                            ? "bg-[#E50914] text-black hover:bg-[#ff0a1b] hover:text-white shadow-[0_0_30px_rgba(229,9,20,0.4)]"
+                                                            : "bg-[#E50914] hover:bg-[#ff0a1b] text-white hover:shadow-[0_0_30px_rgba(229,9,20,0.4)]"}
+                                                    `}
                                                 >
                                                     Join Now
                                                 </a>

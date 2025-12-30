@@ -109,16 +109,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#benefits"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("#benefits");
-                  }}
+                <Link
+                  to="/packages"
+                  onClick={() => window.scrollTo(0, 0)}
                   className="hover:text-red-500 transition-colors duration-200 inline-block"
                 >
-                  Membership Plans
-                </a>
+                  Packages
+                </Link>
               </li>
               <li>
                 <a
@@ -274,10 +271,10 @@ const Footer = () => {
             <div className="space-y-1.5">
               <p className="text-sm text-gray-400 font-medium">
                 <a
-                  href="mailto:contact@sagarfitness.com"
+                  href="mailto:contact@sagarfitness.in"
                   className="hover:text-red-500 transition-colors duration-200 inline-block"
                 >
-                  contact@sagarfitness.com
+                  contact@sagarfitness.in
                 </a>
               </p>
               <p className="text-sm text-gray-400 font-medium">
